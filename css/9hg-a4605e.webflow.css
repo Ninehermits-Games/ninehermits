@@ -2962,6 +2962,7 @@ label {
   .image-2 {
     max-width: 70%;
     position: relative;
+    top: -28px;
     left: -18px;
   }
 
