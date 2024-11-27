@@ -418,7 +418,7 @@ label {
   flex: 0 auto;
   justify-content: flex-start;
   align-items: center;
-  margin-top: -116px;
+  margin-top: -25px;
   text-decoration: none;
   display: flex;
   position: relative;
@@ -972,6 +972,10 @@ label {
   display: block;
   position: relative;
   inset: 0%;
+}
+
+.submit-button.jj {
+  position: relative;
 }
 
 .form {
