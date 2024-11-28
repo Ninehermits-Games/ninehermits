@@ -424,6 +424,10 @@ label {
   position: relative;
 }
 
+.button.bb2 {
+  top: -31px;
+}
+
 .button-card-big {
   grid-column-gap: 10px;
   color: #000;
