@@ -2688,10 +2688,12 @@ label {
     text-align: left;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 306px;
-    margin-left: 0;
-    position: absolute;
-    left: 11px;
+    margin-top: 0;
+    margin-left: -18px;
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
   }
 
   .hs-content {
@@ -2766,6 +2768,10 @@ label {
 
   .footer-heading {
     margin-left: -18px;
+  }
+
+  .footer-carousel {
+    margin-top: 74px;
   }
 
   .footer-carousel-wrapper {
