@@ -21419,7 +21419,9 @@
     if (prop.startsWith("--")) {
       return window.getComputedStyle(document.documentElement).getPropertyValue(prop);
     }
-    return element.style[prop];
+    if (element.style instanceof CSSStyleDeclaration) {
+      return element.style[prop];
+    }
   }
   function getProperty(element, prop) {
     return element[prop];

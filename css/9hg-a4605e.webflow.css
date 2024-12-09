@@ -252,6 +252,7 @@ label {
 
 .paragraph-35px {
   letter-spacing: -.01em;
+  margin-top: 67px;
   font-size: 35px;
   font-weight: 400;
   line-height: 120%;
@@ -426,6 +427,15 @@ label {
 
 .button.bb2 {
   top: -31px;
+}
+
+.button.abt {
+  margin-top: -113px;
+}
+
+.button.wwu {
+  margin-top: -211px;
+  display: flex;
 }
 
 .button-card-big {
@@ -673,7 +683,7 @@ label {
 .hv-header-heading {
   text-transform: uppercase;
   max-width: 470px;
-  margin-top: 8px;
+  margin-top: 1px;
   margin-bottom: 89px;
 }
 
@@ -1983,6 +1993,10 @@ label {
 
 .image {
   margin-top: -60px;
+}
+
+.text-block-3 {
+  text-transform: none;
 }
 
 @media screen and (max-width: 991px) {
