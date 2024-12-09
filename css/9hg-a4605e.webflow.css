@@ -2635,8 +2635,9 @@ label {
 
   .paragraph-30px {
     text-align: left;
+    width: 260px;
     margin-top: -27px;
-    margin-left: 0;
+    margin-left: -21px;
     font-size: 18px;
   }
 
@@ -2711,12 +2712,17 @@ label {
   }
 
   .button.abt {
-    margin-top: 360px;
+    margin-top: 326px;
+    margin-left: -21px;
   }
 
   .button.wwu {
     margin-top: 278px;
     margin-left: -19px;
+  }
+
+  .ha-heading {
+    margin-left: -20px;
   }
 
   .hs-content {
@@ -2790,7 +2796,7 @@ label {
   }
 
   .footer-heading {
-    margin-top: -59px;
+    margin-top: -30px;
     margin-left: -18px;
   }
 
