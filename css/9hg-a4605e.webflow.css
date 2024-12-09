@@ -2710,6 +2710,15 @@ label {
     left: 0;
   }
 
+  .button.abt {
+    margin-top: 360px;
+  }
+
+  .button.wwu {
+    margin-top: 278px;
+    margin-left: -19px;
+  }
+
   .hs-content {
     padding-left: 10px;
     padding-right: 10px;
@@ -2781,6 +2790,7 @@ label {
   }
 
   .footer-heading {
+    margin-top: -59px;
     margin-left: -18px;
   }
 
