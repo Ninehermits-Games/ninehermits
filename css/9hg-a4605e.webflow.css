@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Thunder;
+  src: url('../fonts/Thunder-BoldLC.otf') format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   color: #fff;
   background-color: #0d0a09;
@@ -1671,6 +1679,7 @@ label {
 }
 
 .ih-heading {
+  text-align: left;
   text-transform: uppercase;
   margin-top: 24px;
   font-size: min(300px, 15vw);
@@ -1999,6 +2008,29 @@ label {
   text-transform: none;
 }
 
+.section-2 {
+  grid-column-gap: 79px;
+  grid-row-gap: 79px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+  display: flex;
+}
+
+.image-3 {
+  object-fit: cover;
+  width: 28%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.image-4 {
+  object-fit: cover;
+  width: 95%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     font-size: 200px;
@@ -2274,6 +2306,19 @@ label {
     grid-column-gap: 100px;
     grid-row-gap: 100px;
   }
+
+  .section-2 {
+    flex-flow: column;
+  }
+
+  .image-3 {
+    width: 80%;
+  }
+
+  .image-4 {
+    width: 80%;
+    height: 400px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -2347,6 +2392,10 @@ label {
   .ha-wrapper {
     grid-column-gap: 25px;
     grid-row-gap: 25px;
+  }
+
+  .button.bb2 {
+    margin-top: 21px;
   }
 
   .hs-circle {
@@ -2554,6 +2603,14 @@ label {
   .hs-lottie-circle {
     object-fit: contain;
     width: 100%;
+  }
+
+  .image-3 {
+    height: 300px;
+  }
+
+  .image-4 {
+    height: 200px;
   }
 }
 
@@ -3026,6 +3083,14 @@ label {
 
   .heading-2, .heading-3 {
     font-size: 22px;
+  }
+
+  .image-3 {
+    height: 250px;
+  }
+
+  .image-4 {
+    height: 150px;
   }
 }
 
