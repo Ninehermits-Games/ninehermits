@@ -1093,6 +1093,8 @@ label {
 .footer-text._2.priv {
   color: #717171;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-text._2.priv.w--current {
