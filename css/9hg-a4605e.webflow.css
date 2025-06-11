@@ -92,6 +92,7 @@ label {
 
 .page-wrapper {
   contain: paint;
+  background-color: #fff;
 }
 
 .container {
@@ -114,18 +115,28 @@ label {
 }
 
 .container.no-bottom-padding {
+  background-color: #fff;
+  border-bottom-right-radius: 110px;
+  border-bottom-left-radius: 110px;
   padding-bottom: 0;
 }
 
 .container.c-footer-bottom {
+  background-color: #000;
   padding-top: 30px;
   padding-bottom: 30px;
+  position: static;
 }
 
 .container.c-investor-cms {
   padding-top: 0;
   padding-bottom: 0;
   padding-right: 0;
+}
+
+.section {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .section.bg-white {
@@ -137,7 +148,7 @@ label {
   grid-column-gap: 6px;
   grid-row-gap: 6px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #000;
   border-radius: 3px;
   flex-flow: column;
   padding: 12px;
@@ -149,6 +160,10 @@ label {
   border-radius: 20px;
   width: 20px;
   height: 3px;
+}
+
+.nav-menu-line._1, .nav-menu-line._2, .nav-menu-line._3 {
+  background-color: #fff;
 }
 
 .home-hero {
@@ -221,6 +236,7 @@ label {
 }
 
 .paragraph-25px {
+  color: #000;
   letter-spacing: -.01em;
   font-size: 22px;
   font-weight: 400;
@@ -247,6 +263,7 @@ label {
 }
 
 .paragraph-20px {
+  color: #000;
   letter-spacing: -.01em;
   font-size: 20px;
   font-weight: 400;
@@ -273,6 +290,7 @@ label {
 }
 
 .paragraph-35px {
+  color: #000;
   letter-spacing: -.01em;
   margin-top: 67px;
   font-size: 35px;
@@ -337,6 +355,7 @@ label {
 }
 
 .paragraph-30px {
+  color: #000;
   text-align: left;
   letter-spacing: .02em;
   max-width: 660px;
@@ -346,6 +365,7 @@ label {
 }
 
 .hh-heading {
+  color: #000;
   text-transform: uppercase;
   width: auto;
   font-size: 110px;
@@ -384,7 +404,7 @@ label {
 
 .home-about {
   grid-row-gap: 100px;
-  background-color: #0d0a09;
+  background-color: #fff;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -463,7 +483,7 @@ label {
 .button-card-big {
   grid-column-gap: 10px;
   color: #000;
-  background-color: #f1f0ea;
+  background-color: #000;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -476,7 +496,7 @@ label {
 
 .button-card-small {
   grid-column-gap: 10px;
-  background-color: #f1f0ea;
+  background-color: #c5c5c5;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -511,6 +531,7 @@ label {
 }
 
 .ha-heading {
+  color: #000;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: -5px;
@@ -522,7 +543,7 @@ label {
 
 .home-spot {
   grid-column-gap: 10px;
-  background-color: #0d0a09;
+  background-color: #fff;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -558,7 +579,7 @@ label {
 }
 
 .hs-text {
-  color: #f1f0eab3;
+  color: #454545b3;
   letter-spacing: -.03em;
   text-transform: undefined;
   margin-top: 0;
@@ -657,6 +678,7 @@ label {
 
 .hp-inner-heading {
   z-index: 2;
+  color: #000;
   letter-spacing: -.01em;
   padding-top: 45px;
   font-weight: 700;
@@ -703,6 +725,7 @@ label {
 }
 
 .hv-header-heading {
+  color: #000;
   text-transform: uppercase;
   max-width: 470px;
   margin-top: 1px;
@@ -864,6 +887,7 @@ label {
 }
 
 .footer-heading {
+  color: #000;
   text-transform: uppercase;
   margin-top: -89px;
 }
@@ -918,9 +942,9 @@ label {
 }
 
 .fm-background-border {
-  background-color: #0d0a09;
-  border-bottom-right-radius: 100px;
-  border-bottom-left-radius: 100px;
+  background-color: #000;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .fm-wrapper {
@@ -1064,7 +1088,7 @@ label {
 }
 
 .footer-social-circle {
-  border: 1px solid #000;
+  border: 1px solid #fff;
   border-radius: 100%;
   justify-content: center;
   align-items: center;
@@ -1085,13 +1109,14 @@ label {
 }
 
 .footer-text._2 {
+  color: #fff;
   text-align: right;
   max-width: none;
   margin-top: 0;
 }
 
 .footer-text._2.priv {
-  color: #717171;
+  color: #b7b7b7;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -1119,7 +1144,7 @@ label {
 }
 
 .navbar-menu-link {
-  color: #000;
+  color: #fff;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 500;
@@ -1129,7 +1154,11 @@ label {
 }
 
 .navbar-menu-link:hover {
-  color: #e03000;
+  color: #aafe1e;
+}
+
+.navbar-menu-link.w--current {
+  color: #fff;
 }
 
 .navbar-collapse {
@@ -1145,7 +1174,8 @@ label {
 }
 
 .nav-menu {
-  background-color: #fff;
+  color: #000;
+  background-color: #000;
   border-radius: 10px;
   flex-flow: column;
   justify-content: flex-start;
@@ -1469,6 +1499,7 @@ label {
 }
 
 .ch-heading {
+  color: #000;
   text-transform: uppercase;
   font-size: 270px;
 }
@@ -1536,24 +1567,28 @@ label {
 }
 
 .form-field {
-  color: #fff;
+  color: #000;
   background-color: #fff0;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   height: 60px;
   margin-bottom: 0;
   font-size: 16px;
 }
 
 .form-field:focus {
-  border-color: #fff;
+  border-color: #000;
 }
 
 .form-field::placeholder {
-  color: #ffffff80;
+  color: #12121280;
 }
 
 .form-field.first {
   height: 50px;
+}
+
+.form-field.first:focus {
+  border-color: #000;
 }
 
 .investors-hero {
@@ -1709,6 +1744,7 @@ label {
 }
 
 .ih-heading {
+  color: #000;
   text-align: left;
   text-transform: uppercase;
   margin-top: 24px;
@@ -1968,6 +2004,7 @@ label {
 }
 
 .terms-heading {
+  color: #000;
   text-transform: uppercase;
   font-size: min(15vw, 300px);
 }
@@ -1984,6 +2021,7 @@ label {
 }
 
 .terms-small-heading {
+  color: #000;
   letter-spacing: -.01em;
   margin-bottom: 0;
   font-family: Thunder, sans-serif;
@@ -2029,6 +2067,7 @@ label {
 
 .hs-lottie-circle {
   z-index: 1;
+  color: #000;
   object-fit: cover;
   flex: 0 auto;
   justify-content: center;
@@ -2039,16 +2078,30 @@ label {
 }
 
 .body {
-  background-color: #0d0a09;
-  margin-left: 20px;
-  margin-right: 25px;
+  background-color: #fff;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .image {
   margin-top: -60px;
 }
 
+.text-block-2 {
+  color: #fff;
+}
+
+.body-2 {
+  color: #000;
+  background-color: #fff;
+}
+
+.heading-3 {
+  color: #000;
+}
+
 .text-block-3 {
+  color: #fff;
   text-transform: none;
 }
 
@@ -2080,6 +2133,7 @@ label {
 }
 
 .list {
+  color: #000;
   font-size: 22px;
 }
 
@@ -2090,6 +2144,24 @@ label {
 .section-3 {
   margin-top: -26px;
   margin-left: 72px;
+}
+
+.text-block-4 {
+  color: #fff;
+}
+
+.bold-text {
+  color: #000;
+}
+
+.body-3 {
+  color: #fff;
+  background-color: #000;
+}
+
+.body-4 {
+  color: #000;
+  background-color: #fff;
 }
 
 @media screen and (max-width: 991px) {
@@ -2966,8 +3038,7 @@ label {
   }
 
   .fm-background-border {
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-radius: 0 0 200px 200px;
   }
 
   .fm-wrapper {
