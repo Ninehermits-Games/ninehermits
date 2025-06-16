@@ -914,10 +914,31 @@ label {
   display: flex;
 }
 
+.footer-carousel-wrapper.hp {
+  margin-top: 0;
+}
+
 .footer-image._1 {
   object-fit: cover;
   width: 350px;
   height: 350px;
+}
+
+.footer-image._1.hp {
+  width: auto;
+  height: 100px;
+}
+
+.footer-image._1.hp.t {
+  margin-left: 17px;
+}
+
+.footer-image._1.hp.y, .footer-image._1.hp.u, .footer-image._1.hp.i, .footer-image._1.hp.o {
+  margin-left: 35px;
+}
+
+.footer-image._1.hp.p {
+  margin-left: 15px;
 }
 
 .footer-image._2 {
@@ -927,6 +948,12 @@ label {
   margin-bottom: 50px;
 }
 
+.footer-image._2.hp {
+  width: auto;
+  height: 100px;
+  margin-bottom: 0;
+}
+
 .footer-image._3 {
   object-fit: cover;
   width: 350px;
@@ -934,11 +961,23 @@ label {
   margin-bottom: 0;
 }
 
+.footer-image._3.hp {
+  width: 100px;
+  height: 100px;
+}
+
 .footer-image._4 {
   object-fit: cover;
   width: 350px;
   height: 350px;
   margin-bottom: 50px;
+}
+
+.footer-image._4.hp {
+  width: auto;
+  height: 100px;
+  margin-bottom: 0;
+  margin-right: 23px;
 }
 
 .footer-middle {
@@ -2168,6 +2207,10 @@ label {
   background-color: #fff;
 }
 
+.link-2 {
+  color: #aafe1e;
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     font-size: 200px;
@@ -2239,7 +2282,7 @@ label {
   .ha-image {
     width: 32%;
     max-width: none;
-    height: 350px;
+    height: 200px;
   }
 
   .ha-image._1 {
@@ -2256,11 +2299,7 @@ label {
     padding-right: 20px;
   }
 
-  .hp-image._1 {
-    height: 300px;
-  }
-
-  .hp-image._2 {
+  .hp-image._1, .hp-image._2 {
     height: 550px;
   }
 
@@ -2539,11 +2578,7 @@ label {
     height: 420px;
   }
 
-  .ha-image {
-    height: 250px;
-  }
-
-  .ha-image._1 {
+  .ha-image, .ha-image._1 {
     height: 150px;
   }
 
@@ -2583,11 +2618,7 @@ label {
     height: 400px;
   }
 
-  .hp-image._1 {
-    height: 250px;
-  }
-
-  .hp-image._2 {
+  .hp-image._1, .hp-image._2 {
     height: 450px;
   }
 
@@ -2971,7 +3002,8 @@ label {
   }
 
   .button.wwu.conusbtnnew {
-    margin-top: 193px;
+    margin-top: 207px;
+    margin-left: -24px;
   }
 
   .button-card-big {
@@ -3059,6 +3091,10 @@ label {
 
   .footer-carousel {
     margin-top: 74px;
+  }
+
+  .footer-carousel.hp {
+    margin-top: 0;
   }
 
   .footer-carousel-wrapper {
