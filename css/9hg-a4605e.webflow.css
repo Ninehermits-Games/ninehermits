@@ -929,16 +929,12 @@ label {
   height: 100px;
 }
 
-.footer-image._1.hp.t {
-  margin-left: 17px;
+.footer-image._1.hp.q, .footer-image._1.hp.t, .footer-image._1.hp.y, .footer-image._1.hp.u, .footer-image._1.hp.i {
+  margin-left: 0;
 }
 
-.footer-image._1.hp.y, .footer-image._1.hp.u, .footer-image._1.hp.i, .footer-image._1.hp.o {
-  margin-left: 35px;
-}
-
-.footer-image._1.hp.p {
-  margin-left: 15px;
+.footer-image._1.hp.o, .footer-image._1.hp.p {
+  margin-left: 25px;
 }
 
 .footer-image._2 {
