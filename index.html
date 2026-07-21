@@ -1,188 +1,1271 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Jun 17 2025 09:41:45 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="674442b983a74e561a453f4a" data-wf-site="674442b983a74e561a453eca">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Nine Hermits Games</title>
-  <meta content="NineHermitsGames is an innovative studio specializing in blockchain and metaverse game development, blending creativity with technology to unlock the limitless possibilities of Web3 and revolutionizing entertainment and connectivity in the digital age." name="description">
-  <meta content="Nine Hermits Games" property="og:title">
-  <meta content="NineHermitsGames is an innovative studio specializing in blockchain and metaverse game development, blending creativity with technology to unlock the limitless possibilities of Web3 and revolutionizing entertainment and connectivity in the digital age." property="og:description">
-  <meta content="Nine Hermits Games" property="twitter:title">
-  <meta content="NineHermitsGames is an innovative studio specializing in blockchain and metaverse game development, blending creativity with technology to unlock the limitless possibilities of Web3 and revolutionizing entertainment and connectivity in the digital age." property="twitter:description">
-  <meta property="og:type" content="website">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="Webflow" name="generator">
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/9hg-a4605e.webflow.css" rel="stylesheet" type="text/css">
-  <style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="3ad9a008-fb61-e8d5-3a0d-447be525ed33"] {opacity:0;}html.w-mod-js:not(.w-mod-ix) [data-w-id="252b74e7-d8ba-539a-1706-36f03b4e9dfd"] {opacity:0;}html.w-mod-js:not(.w-mod-ix) [data-w-id="adef25c0-4087-c235-079c-8a8780824c29"] {opacity:0;}html.w-mod-js:not(.w-mod-ix) [data-w-id="4b3571fa-b4f5-16d3-2498-6449329e96c1"] {opacity:0;}html.w-mod-js:not(.w-mod-ix) [data-w-id="4b3571fa-b4f5-16d3-2498-6449329e96d1"] {opacity:0;}html.w-mod-js:not(.w-mod-ix) [data-w-id="4b3571fa-b4f5-16d3-2498-6449329e96e1"] {opacity:0;}}</style>
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-  <script type="text/javascript">WebFont.load({  google: {    families: ["Manrope:regular,500"]  }});</script>
-  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
-  <link href="images/webclip.png" rel="apple-touch-icon">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NINE HERMITS GAMES</title>
+  <link rel="icon" href="Assets/favicon.ico"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Press+Start+2P&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#09090D;--surface:#0D0D12;--card:#131318;--card-h:#1C1C24;
+      --border:#1C1C28;--border-h:#2A2A3A;
+      --orange:#FF5200;--orange-l:#FF7830;--orange-d:#CC3D00;
+      --oglow:rgba(255,82,0,.6);--oglow2:rgba(255,82,0,.15);
+      --white:#F2F2F7;--off:#DDDDE8;--gray:#B2B2CC;--muted:#7A7A94;
+      --FT:'Orbitron',sans-serif;--FP:'Press Start 2P',monospace;
+      --FB:'Rajdhani',sans-serif;--FM:'Share Tech Mono',monospace;
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--white);font-family:var(--FB);font-size:16px;overflow-x:hidden;cursor:none}
+    ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--orange);border-radius:0}
+
+    /* ══════════════════════════════════════
+       CURSOR
+    ══════════════════════════════════════ */
+    #cur{position:fixed;width:8px;height:8px;background:var(--orange);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .12s,height .12s,background .12s}
+    #cur-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(255,82,0,.45);pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .18s,height .18s,border-color .18s}
+    body:has(a:hover,button:hover,[onclick]:hover) #cur{width:18px;height:18px;background:var(--orange-l)}
+    body:has(a:hover,button:hover,[onclick]:hover) #cur-ring{width:44px;height:44px;border-color:var(--orange)}
+
+    /* ══════════════════════════════════════
+       GLOBAL GLITCH OVERLAY
+    ══════════════════════════════════════ */
+    #gover{position:fixed;inset:0;z-index:9991;pointer-events:none;opacity:0}
+    #gover.g1{animation:gover1 .18s steps(3) forwards}
+    #gover.g2{animation:gover2 .22s steps(4) forwards}
+    @keyframes gover1{
+      0%{opacity:1;clip-path:inset(8% 0 88% 0);background:rgba(255,0,128,.03);transform:translateX(-4px)}
+      33%{clip-path:inset(55% 0 30% 0);background:rgba(0,255,200,.03);transform:translateX(4px)}
+      66%{clip-path:inset(80% 0 5% 0);background:rgba(255,82,0,.03);transform:translateX(-2px)}
+      100%{opacity:0}
+    }
+    @keyframes gover2{
+      0%{opacity:1;clip-path:inset(20% 0 60% 0);background:rgba(0,200,255,.04);transform:translateX(5px)}
+      25%{clip-path:inset(0% 0 85% 0);transform:translateX(-5px)}
+      50%{clip-path:inset(70% 0 15% 0);background:rgba(255,82,0,.04);transform:translateX(3px)}
+      75%{clip-path:inset(40% 0 40% 0);transform:translateX(-3px)}
+      100%{opacity:0}
+    }
+
+    /* ══════════════════════════════════════
+       CRT OVERLAY
+    ══════════════════════════════════════ */
+    #crt{position:fixed;inset:0;z-index:9990;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.055) 2px,rgba(0,0,0,.055) 3px)}
+
+    /* ══════════════════════════════════════
+       BOOT
+    ══════════════════════════════════════ */
+    #boot{position:fixed;inset:0;z-index:9999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+    .b-pre{font-family:var(--FM);font-size:9px;color:#2a2a2a;letter-spacing:.1em;line-height:2;text-align:center}
+    .b-pre b{color:var(--orange)}
+    .b-logo{font-family:var(--FT);font-size:22px;font-weight:900;letter-spacing:.2em;color:var(--orange);text-shadow:0 0 40px var(--oglow)}
+    .b-jp{font-family:var(--FM);font-size:10px;color:#333;letter-spacing:.2em}
+    .b-bar-bg{width:240px;height:3px;background:#0e0e0e;border:1px solid #1a1a1a}
+    .b-bar{height:100%;background:var(--orange);box-shadow:0 0 10px var(--oglow);animation:bload 2.4s steps(24) forwards}
+    @keyframes bload{0%{width:0}100%{width:100%}}
+    .b-txt{font-family:var(--FP);font-size:6px;color:#444;letter-spacing:.08em}
+    .b-coin{font-family:var(--FP);font-size:8px;color:var(--orange);letter-spacing:.15em;animation:blink .8s step-end infinite;margin-top:6px}
+
+    /* ══════════════════════════════════════
+       KEYFRAMES
+    ══════════════════════════════════════ */
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+    @keyframes ppulse{0%,100%{box-shadow:0 0 0 0 rgba(255,82,0,.4)}50%{box-shadow:0 0 0 6px rgba(255,82,0,0)}}
+    @keyframes sbounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(6px)}}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+
+    /* glitch text */
+    @keyframes gt-big{
+      0%,78%,100%{transform:none;color:var(--orange);text-shadow:0 0 60px rgba(255,82,0,.4);clip-path:inset(0 0 0 0);filter:none}
+      79%{transform:translate(-6px,1px);color:#ff5200;text-shadow:-5px 0 rgba(255,0,128,.95),5px 0 rgba(0,255,200,.95);filter:brightness(1.4)}
+      80%{transform:translate(7px,-2px);clip-path:inset(10% 0 50% 0);filter:brightness(1.6) saturate(1.5)}
+      81%{transform:translate(-4px,2px);clip-path:inset(55% 0 8% 0);color:#fff;filter:brightness(2)}
+      82%{transform:translate(3px,0);clip-path:inset(25% 0 30% 0);color:var(--orange-l)}
+      83%{transform:none;clip-path:inset(0 0 0 0);color:var(--orange);filter:none}
+    }
+    @keyframes gt-sm{
+      0%,90%,100%{transform:none;filter:none}
+      91%{transform:translate(-3px,0);filter:hue-rotate(60deg)}
+      92%{transform:translate(3px,0);filter:hue-rotate(-60deg)}
+      93%{transform:none;filter:none}
+    }
+    /* card power-on */
+    @keyframes crt-on{
+      0%{opacity:0;transform:scaleY(.02) scaleX(1.08);filter:brightness(6) saturate(0)}
+      15%{opacity:1;transform:scaleY(1.04) scaleX(.98);filter:brightness(3) saturate(0)}
+      35%{transform:scaleY(.98) scaleX(1.01);filter:brightness(1.8) saturate(.4) hue-rotate(20deg)}
+      60%{transform:scaleY(1.01);filter:brightness(1.3)}
+      100%{transform:none;filter:none;opacity:1}
+    }
+    /* section scan reveal */
+    @keyframes sec-scan{
+      0%{opacity:0;transform:translateY(30px)}
+      100%{opacity:1;transform:translateY(0)}
+    }
+    /* neon pulse */
+    @keyframes neon-pulse{
+      0%,100%{box-shadow:0 0 4px var(--oglow2),inset 0 0 4px rgba(255,82,0,.05)}
+      50%{box-shadow:0 0 16px var(--oglow),inset 0 0 8px rgba(255,82,0,.1)}
+    }
+    /* border draw */
+    @keyframes border-draw{
+      0%{stroke-dashoffset:1000}
+      100%{stroke-dashoffset:0}
+    }
+    /* float */
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    /* rgb-shift hover */
+    @keyframes rgb-h{
+      0%,100%{text-shadow:none}
+      50%{text-shadow:-2px 0 rgba(255,0,128,.4),2px 0 rgba(0,255,200,.4)}
+    }
+    /* hp fill */
+    @keyframes hpfill{from{width:0}to{width:var(--w)}}
+
+    /* ══════════════════════════════════════
+       NAV
+    ══════════════════════════════════════ */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;display:flex;align-items:center;padding:0 44px;gap:28px;background:rgba(9,9,13,.88);border-bottom:1px solid var(--border);backdrop-filter:blur(16px);transition:border-color .3s}
+    nav.scrolled{border-bottom-color:rgba(255,82,0,.3)}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+    .nav-logo-img{height:48px;width:auto;display:block}
+    .nav-wm{font-family:var(--FT);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--white)}
+    .nav-wm em{color:var(--orange);font-style:normal}
+    .nav-arc{display:flex;align-items:center;gap:16px}
+    .nav-p1{font-family:var(--FP);font-size:7px;color:#000;background:var(--orange);padding:3px 8px;letter-spacing:.05em}
+    .nav-sc{display:flex;flex-direction:column;line-height:1.1}
+    .nav-sc-l{font-family:var(--FP);font-size:5px;color:var(--muted);letter-spacing:.1em}
+    .nav-sc-v{font-family:var(--FP);font-size:8px;color:var(--orange)}
+    .nav-links{display:flex;gap:2px;list-style:none;margin-left:auto}
+    .nav-links a{font-family:var(--FP);font-size:7px;letter-spacing:.08em;color:var(--gray);text-decoration:none;padding:7px 13px;transition:color .2s,text-shadow .2s;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:13px;right:13px;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+    .nav-links a:hover,.nav-links a.active{color:var(--orange)}
+    .nav-links a.active::after,.nav-links a:hover::after{transform:scaleX(1)}
+    .nav-cta{font-family:var(--FP);font-size:7px;letter-spacing:.1em;padding:9px 20px;background:var(--orange);color:#000;border:none;cursor:none;text-decoration:none;transition:background .2s,box-shadow .2s,transform .1s;white-space:nowrap;position:relative;overflow:hidden}
+    .nav-cta::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.15);transform:translateX(-100%);transition:transform .2s}
+    .nav-cta:hover{background:var(--orange-l);box-shadow:0 0 24px var(--oglow)}
+    .nav-cta:hover::before{transform:translateX(0)}
+
+    /* ══════════════════════════════════════
+       BUTTONS
+    ══════════════════════════════════════ */
+    .bp,.bs{font-family:var(--FP);font-size:8px;letter-spacing:.1em;padding:15px 30px;cursor:none;text-decoration:none;display:inline-block;transition:all .22s;clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));position:relative;overflow:hidden}
+    .bp{background:var(--orange);color:#000;border:none}
+    .bp::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.2);transform:translateX(-100%);transition:transform .25s}
+    .bp:hover{background:var(--orange-l);box-shadow:0 0 30px var(--oglow),0 0 60px rgba(255,82,0,.2);transform:translateY(-2px)}
+    .bp:hover::before{transform:translateX(0)}
+    .bs{background:transparent;color:var(--orange);border:1px solid var(--orange)}
+    .bs:hover{background:rgba(255,82,0,.12);box-shadow:0 0 20px rgba(255,82,0,.25),inset 0 0 12px rgba(255,82,0,.06);transform:translateY(-2px)}
+
+    /* ══════════════════════════════════════
+       HERO — VIDEO BG
+    ══════════════════════════════════════ */
+    #home{min-height:100vh;padding-top:60px;position:relative;display:flex;align-items:center;overflow:hidden}
+
+    /* VIDEO */
+    #hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:1}
+
+    /* edge vignette only — video stays full brightness in center */
+    .hero-vignette{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at 30% 50%,transparent 35%,rgba(9,9,13,.65) 100%)}
+
+    /* scan line sweeper */
+    .hero-scan{position:absolute;left:0;right:0;height:3px;z-index:3;pointer-events:none;background:linear-gradient(90deg,transparent 0%,rgba(255,82,0,.3) 40%,rgba(255,200,100,.6) 50%,rgba(255,82,0,.3) 60%,transparent 100%);animation:scanline 4s linear infinite;opacity:.6}
+
+    /* corner HUD frames */
+    .hud-frame{position:absolute;z-index:4;pointer-events:none}
+    .hud-tl{top:72px;left:24px;display:flex;flex-direction:column;gap:6px}
+    .hud-tr{top:72px;right:80px;text-align:right;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+    .hud-bl{bottom:50px;left:24px}
+    .hud-line{font-family:var(--FM);font-size:9px;letter-spacing:.12em;line-height:1.4;color:rgba(255,82,0,.7)}
+    .hud-label{font-family:var(--FP);font-size:5px;color:rgba(255,82,0,.5);letter-spacing:.12em;margin-bottom:3px}
+    .hud-bar{width:140px;height:4px;background:rgba(255,82,0,.12);border:1px solid rgba(255,82,0,.2);overflow:hidden}
+    .hud-fill{height:100%;background:var(--orange);box-shadow:0 0 6px var(--oglow)}
+    .hud-fill.hp{width:82%;animation:hpfill 2s ease 1s both}
+    .hud-fill.exp{width:65%;animation:hpfill 2.4s ease 1.2s both}
+    @keyframes hpfill{from{width:0}to{width:var(--w,82%)}}
+    .hud-val{font-family:var(--FP);font-size:7px;color:var(--orange);letter-spacing:.08em;text-shadow:0 0 8px var(--oglow)}
+    .hud-score{font-family:var(--FP);font-size:9px;color:var(--orange);text-shadow:0 0 12px var(--oglow);letter-spacing:.1em}
+    .hud-coord{font-family:var(--FM);font-size:9px;color:rgba(255,82,0,.5);letter-spacing:.1em}
+
+    /* kanji watermark */
+    .hero-kanji{position:absolute;right:-80px;top:50%;transform:translateY(-50%);font-family:var(--FM);font-size:clamp(160px,26vw,460px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,82,0,.06);pointer-events:none;user-select:none;z-index:3;animation:float 6s ease-in-out infinite}
+
+    /* content */
+    .hero-inner{position:relative;z-index:5;padding:80px 80px 120px;max-width:900px}
+    .hbadge{display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;padding:6px 14px;border:1px solid rgba(255,82,0,.35);background:rgba(9,9,13,.6);backdrop-filter:blur(8px)}
+    .dot{width:6px;height:6px;background:var(--orange);box-shadow:0 0 10px var(--oglow);animation:blink 1.6s infinite}
+    .hbadge span{font-family:var(--FP);font-size:7px;letter-spacing:.1em;color:var(--orange)}
+    .htitle{font-family:var(--FT);font-size:clamp(50px,9vw,118px);font-weight:900;line-height:.9;letter-spacing:-.02em;color:var(--white);margin-bottom:18px;text-shadow:0 0 40px rgba(0,0,0,.8),0 2px 8px rgba(0,0,0,.9)}
+    .htitle .gl{display:block;color:var(--orange);text-shadow:0 0 60px rgba(255,82,0,.5),0 0 120px rgba(255,82,0,.25);animation:gt-big 5s infinite}
+    .hsub{font-family:var(--FP);font-size:9px;letter-spacing:.14em;color:rgba(242,242,247,.8);margin-bottom:20px;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+    .hdesc{font-size:18px;font-weight:600;color:var(--off);line-height:1.75;max-width:520px;margin-bottom:44px;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+    .hactions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:32px}
+    .insert-coin{display:flex;align-items:center;gap:12px}
+    .ci{width:22px;height:22px;border:2px solid var(--orange);display:grid;place-items:center;font-family:var(--FP);font-size:6px;color:var(--orange);animation:ppulse 2s infinite}
+    .ct{font-family:var(--FP);font-size:8px;color:var(--orange);letter-spacing:.15em;animation:blink 1s step-end infinite;text-shadow:0 0 10px var(--oglow)}
+    .cr{font-family:var(--FP);font-size:8px;color:rgba(255,82,0,.5);letter-spacing:.1em;margin-left:14px}
+    .cr em{color:var(--orange);font-style:normal}
+    .hstats{position:absolute;right:80px;bottom:80px;display:flex;gap:2px;z-index:5}
+    .hs{padding:14px 20px;background:rgba(9,9,13,.75);border:1px solid rgba(255,82,0,.2);text-align:center;min-width:88px;backdrop-filter:blur(8px);animation:neon-pulse 3s ease-in-out infinite}
+    .hs:nth-child(2){animation-delay:.4s}.hs:nth-child(3){animation-delay:.8s}
+    .hs-n{font-family:var(--FT);font-size:28px;font-weight:900;color:var(--orange);line-height:1;text-shadow:0 0 20px rgba(255,82,0,.4)}
+    .hs-l{font-family:var(--FP);font-size:5px;color:var(--muted);letter-spacing:.08em;margin-top:4px}
+    .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:5}
+    .scroll-hint span{font-family:var(--FP);font-size:6px;color:rgba(255,82,0,.6);letter-spacing:.1em}
+    .sarr{width:16px;height:16px;border-right:2px solid rgba(255,82,0,.4);border-bottom:2px solid rgba(255,82,0,.4);transform:rotate(45deg);animation:sbounce 1.6s infinite}
+
+    /* ══════════════════════════════════════
+       MARQUEE
+    ══════════════════════════════════════ */
+    .mband{background:var(--orange);padding:11px 0;overflow:hidden;border-top:1px solid var(--orange-d);border-bottom:1px solid var(--orange-d);position:relative;z-index:10}
+    .mtrack{display:flex;white-space:nowrap;animation:marquee 30s linear infinite}
+    .mtrack span{font-family:var(--FP);font-size:7px;letter-spacing:.15em;color:#000;padding:0 24px}
+    .mtrack .sep{color:rgba(0,0,0,.3)}
+
+    /* ══════════════════════════════════════
+       SECTION COMMONS
+    ══════════════════════════════════════ */
+    section{position:relative;overflow:hidden}
+    .seh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;padding-bottom:16px;border-bottom:1px solid var(--border);position:relative}
+    .seh::after{content:'';position:absolute;bottom:-1px;left:0;width:60px;height:1px;background:var(--orange)}
+    .seb{font-family:var(--FM);font-size:10px;color:var(--muted);margin-bottom:10px}
+    .bt{font-family:var(--FT);font-size:clamp(32px,5vw,60px);font-weight:900;letter-spacing:-.02em;line-height:1;color:var(--white)}
+    .bt .acc{color:var(--orange)}
+    .sea{font-family:var(--FM);font-size:10px;color:var(--muted);text-align:right;line-height:1.7}
+    .gn{position:absolute;font-family:var(--FT);font-size:clamp(100px,16vw,200px);font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(255,82,0,.025);pointer-events:none;user-select:none;line-height:1}
+    /* animated grid bg for dark sections */
+    .grid-bg::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,82,0,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,82,0,.022) 1px,transparent 1px);background-size:52px 52px;animation:grid-drift 20s linear infinite}
+    @keyframes grid-drift{0%{background-position:0 0}100%{background-position:52px 52px}}
+    /* pixel corners */
+    .pxc{position:relative}
+    .pxc::before,.pxc::after{content:'';position:absolute;width:10px;height:10px;border-color:rgba(255,82,0,.18);border-style:solid;transition:border-color .25s}
+    .pxc::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+    .pxc::after{top:-1px;right:-1px;border-width:2px 2px 0 0}
+    .pxcb{position:relative}
+    .pxcb::before,.pxcb::after{content:'';position:absolute;width:10px;height:10px;border-color:rgba(255,82,0,.18);border-style:solid;transition:border-color .25s}
+    .pxcb::before{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
+    .pxcb::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+    .pxc:hover::before,.pxc:hover::after,.pxc:hover .pxcb::before,.pxc:hover .pxcb::after{border-color:var(--orange)}
+
+    /* ══════════════════════════════════════
+       REVEAL ANIMATIONS
+    ══════════════════════════════════════ */
+    .fu{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+    .fu.in{opacity:1;transform:translateY(0)}
+    .fu:nth-child(2){transition-delay:.07s}.fu:nth-child(3){transition-delay:.14s}
+    .fu:nth-child(4){transition-delay:.21s}.fu:nth-child(5){transition-delay:.28s}.fu:nth-child(6){transition-delay:.35s}
+    /* CRT power-on for cards */
+    .crt-card{opacity:0}
+    .crt-card.in{animation:crt-on .55s ease forwards}
+    .crt-card:nth-child(2).in{animation-delay:.1s}
+    .crt-card:nth-child(3).in{animation-delay:.2s}
+    .crt-card:nth-child(4).in{animation-delay:.1s}
+    .crt-card:nth-child(5).in{animation-delay:.2s}
+    .crt-card:nth-child(6).in{animation-delay:.3s}
+
+    /* ══════════════════════════════════════
+       GAMES SECTION
+    ══════════════════════════════════════ */
+    #games{padding:100px 80px;background:#FAFAFA;border-top:4px solid var(--orange)}
+    #games.grid-bg{}
+    #games .gn{top:-20px;left:36px}
+    #games .seh{border-bottom-color:rgba(0,0,0,.1)}
+    #games .bt{color:#09090D}
+    #games .seb{color:#888}
+    #games .sea{color:#888}
+    .gg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px}
+    .gc{background:var(--card);border:1px solid var(--border);cursor:none;transition:border-color .25s,background .3s,transform .2s,box-shadow .3s;overflow:hidden;position:relative}
+    .gc:hover{border-color:var(--orange);background:var(--card-h);transform:translateY(-4px);box-shadow:0 12px 40px rgba(255,82,0,.15),0 0 0 1px rgba(255,82,0,.15)}
+    .gc:hover{animation:gt-sm 4s infinite;opacity:1}
+    .gi{width:100%;aspect-ratio:16/9;background:#0a0a0f;position:relative;overflow:hidden}
+    .gi::before{content:'';position:absolute;inset:0;z-index:2;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.09) 3px,rgba(0,0,0,.09) 4px);pointer-events:none}
+    .gi::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(9,9,13,.9) 0%,rgba(9,9,13,.2) 45%,transparent 75%)}
+    .gph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--FT);font-size:52px;font-weight:900;color:rgba(255,82,0,.07);z-index:0}
+    .sw{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--orange),rgba(255,200,100,.8),var(--orange),transparent);opacity:0;z-index:3;animation:scanline 1.8s linear infinite}
+    .gc:hover .sw{opacity:.55}
+    .gbadge{position:absolute;top:10px;right:10px;z-index:4;font-family:var(--FP);font-size:6px;padding:4px 9px;letter-spacing:.1em}
+    .bl{background:var(--orange);color:#000}.bd{background:rgba(255,82,0,.1);border:1px solid rgba(255,82,0,.4);color:var(--orange)}
+    .gb{padding:20px 22px 22px}
+    .ggenre{font-family:var(--FP);font-size:6px;color:var(--orange);letter-spacing:.15em;opacity:.7;margin-bottom:6px}
+    .gname{font-family:var(--FT);font-size:18px;font-weight:700;color:var(--white);letter-spacing:.02em;margin-bottom:8px;line-height:1.2;transition:color .2s}
+    .gc:hover .gname{color:var(--orange)}
+    .gdesc{font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:16px}
+    .gfoot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border)}
+    .gjp{font-family:var(--FM);font-size:10px;color:var(--muted)}
+    .garr{width:28px;height:28px;border:1px solid var(--border-h);display:grid;place-items:center;font-size:13px;color:var(--muted);transition:all .2s}
+    .gc:hover .garr{border-color:var(--orange);color:var(--orange);background:rgba(255,82,0,.1)}
+    .gc[data-popup]{cursor:pointer}
+
+    /* ══════════════════════════════════════
+       GAME DETAIL MODAL
+    ══════════════════════════════════════ */
+    .gm-overlay{position:fixed;inset:0;z-index:9980;display:flex;align-items:center;justify-content:center;background:rgba(9,9,13,.82);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s;padding:24px}
+    .gm-overlay.show{opacity:1;pointer-events:all}
+    .gm-box{position:relative;max-width:520px;width:100%;background:var(--card);border:1px solid var(--orange);padding:36px 34px;transform:translateY(16px) scale(.98);transition:transform .3s cubic-bezier(.17,.67,.29,1.3);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px rgba(255,82,0,.15)}
+    .gm-overlay.show .gm-box{transform:translateY(0) scale(1)}
+    .gm-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border:1px solid var(--border-h);background:var(--border);color:var(--gray);cursor:none;display:grid;place-items:center;font-size:13px;transition:all .2s}
+    .gm-close:hover{border-color:var(--orange);color:var(--orange);background:rgba(255,82,0,.1)}
+    .gm-genre{font-family:var(--FP);font-size:7px;color:var(--orange);letter-spacing:.15em;opacity:.8;margin-bottom:10px}
+    .gm-name{font-family:var(--FT);font-size:24px;font-weight:900;color:var(--white);letter-spacing:.01em;line-height:1.2;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+    .gm-body{font-size:15px;color:var(--gray);line-height:1.75}
+
+    /* ══════════════════════════════════════
+       STATEMENT — WHITE
+    ══════════════════════════════════════ */
+    .stband{padding:90px 80px;background:var(--surface);position:relative;overflow:hidden;border-left:6px solid var(--orange)}
+    .stband::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,82,0,.06) 1px,transparent 1px);background-size:22px 22px}
+    .stin{position:relative;z-index:1;max-width:860px;margin:0 auto;text-align:center}
+    .stk{display:inline-block;font-family:var(--FP);font-size:7px;letter-spacing:.18em;color:var(--orange);border:1px solid rgba(255,82,0,.3);padding:5px 14px;margin-bottom:20px;background:rgba(255,82,0,.04)}
+    .stjp{font-family:var(--FM);font-size:10px;color:var(--muted);letter-spacing:.22em;margin-bottom:18px}
+    .sttxt{font-family:var(--FT);font-size:clamp(26px,4.5vw,54px);font-weight:900;color:var(--white);line-height:1.15;letter-spacing:-.02em}
+    .sttxt .hl{color:var(--orange)}
+    .stsub{font-size:17px;color:var(--gray);margin-top:18px;font-weight:500;line-height:1.7}
+
+    /* ══════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════ */
+    #service{padding:100px 80px;background:#FAFAFA}
+    #service .gn{right:36px;top:-20px;left:auto}
+    #service .seh{border-bottom-color:rgba(0,0,0,.1)}
+    #service .bt{color:#09090D}
+    #service .seb{color:#888}
+    #service .sea{color:#888}
+    .sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px}
+    .sc{background:var(--card);border:1px solid var(--border);padding:30px 28px;position:relative;transition:border-color .25s,background .25s,transform .2s,box-shadow .3s;overflow:hidden}
+    .sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--orange-l));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+    .sc:hover{border-color:var(--border-h);background:var(--card-h);transform:translateY(-3px);box-shadow:0 8px 32px rgba(255,82,0,.1)}
+    .sc:hover::before{transform:scaleX(1)}
+    .snum{font-family:var(--FM);font-size:10px;color:var(--muted);margin-bottom:14px}
+    .pxi{width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;border:1px solid var(--border-h);background:var(--border);transition:border-color .2s,background .2s,box-shadow .3s;image-rendering:pixelated}
+    .sc:hover .pxi{border-color:rgba(255,82,0,.5);background:rgba(255,82,0,.08);box-shadow:0 0 16px rgba(255,82,0,.2)}
+    .pxi svg{display:block;image-rendering:pixelated}
+    .sname{font-family:var(--FT);font-size:15px;font-weight:700;color:var(--white);letter-spacing:.03em;margin-bottom:10px;line-height:1.3;transition:color .2s}
+    .sc:hover .sname{color:var(--orange)}
+    .sdesc{font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:20px}
+    .stags{display:flex;flex-wrap:wrap;gap:5px}
+    .stag{font-family:var(--FP);font-size:6px;padding:3px 6px;border:1px solid var(--border-h);color:var(--muted);letter-spacing:.07em;transition:border-color .2s,color .2s}
+    .sc:hover .stag{border-color:rgba(255,82,0,.2);color:rgba(255,82,0,.6)}
+    .sjp{position:absolute;bottom:16px;right:16px;font-family:var(--FM);font-size:20px;color:rgba(255,82,0,.045);pointer-events:none;user-select:none}
+
+    /* ══════════════════════════════════════
+       ABOUT — WHITE
+    ══════════════════════════════════════ */
+    #about{padding:100px 80px;background:var(--surface);border-top:4px solid var(--orange)}
+    #about::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,82,0,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,82,0,.02) 1px,transparent 1px);background-size:32px 32px}
+    #about .seh{border-bottom-color:var(--border)}
+    #about .bt{color:var(--white)}
+    #about .seb{color:var(--muted)}
+    #about .sea{color:var(--muted)}
+    #about .seh::after{background:#FF5200}
+    .agrid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1}
+    .ah{font-family:var(--FT);font-size:clamp(28px,3.8vw,48px);font-weight:900;color:var(--white);line-height:1.12;letter-spacing:-.02em;margin-bottom:20px}
+    .ah em{color:var(--orange);font-style:normal}
+    .abody{font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:16px}
+    .aright{display:flex;flex-direction:column;gap:2px}
+    .sr{display:flex;align-items:center;gap:20px;padding:20px 24px;background:var(--card);border:1px solid var(--border);transition:border-color .2s,box-shadow .2s,transform .2s;position:relative;overflow:hidden;cursor:default}
+    .sr:hover{border-color:rgba(255,82,0,.3);box-shadow:0 4px 24px rgba(255,82,0,.1);transform:translateX(4px)}
+    .sr::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange);transform:scaleY(0);transform-origin:bottom;transition:transform .35s}
+    .sr:hover::before{transform:scaleY(1)}
+    .sbn{font-family:var(--FT);font-size:36px;font-weight:900;color:var(--orange);min-width:80px;line-height:1}
+    .sti{font-family:var(--FT);font-size:12px;font-weight:700;color:var(--white);letter-spacing:.05em}
+    .ssu{font-size:12px;color:var(--muted);margin-top:2px}
+    .hpb{height:3px;background:rgba(255,82,0,.1);margin-top:7px;overflow:hidden}
+    .hpf{height:100%;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform 1.4s ease .6s}
+    .fu.in .hpf{transform:scaleX(1)}
+
+    /* ══════════════════════════════════════
+       PROCESS
+    ══════════════════════════════════════ */
+    #process{padding:100px 80px;background:var(--bg);border-top:1px solid var(--border)}
+    #process::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,82,0,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,82,0,.018) 1px,transparent 1px);background-size:48px 48px}
+    .psteps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;position:relative;z-index:1;margin-top:16px}
+    .pstep{padding:30px 24px;background:var(--card);border:1px solid var(--border);position:relative;overflow:hidden;transition:border-color .25s,box-shadow .3s,transform .2s}
+    .pstep:hover{border-color:rgba(255,82,0,.3);box-shadow:0 0 20px rgba(255,82,0,.08);transform:translateY(-2px)}
+    .pstep::after{content:'›';position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--orange);z-index:2;opacity:.6}
+    .pstep:last-child::after{display:none}
+    /* top scan line on reveal */
+    .pstep::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--orange),transparent);transform:translateX(-100%);transition:transform 0s}
+    .pstep.in::before{animation:step-scan .6s ease forwards}
+    @keyframes step-scan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+    .pw{font-family:var(--FP);font-size:7px;color:var(--orange);letter-spacing:.1em;margin-bottom:16px}
+    .ptitle{font-family:var(--FT);font-size:14px;font-weight:700;color:var(--white);letter-spacing:.04em;margin-bottom:10px;transition:color .2s}
+    .pstep:hover .ptitle{color:var(--orange)}
+    .pdesc{font-size:13px;color:var(--gray);line-height:1.6}
+    .pjp{font-family:var(--FM);font-size:10px;color:var(--muted);margin-top:12px}
+    .pscr{position:absolute;bottom:12px;right:12px;width:28px;height:22px;border:1px solid var(--border-h);background:var(--border);display:grid;place-items:center;font-family:var(--FP);font-size:5px;color:rgba(255,82,0,.4)}
+
+    /* ══════════════════════════════════════
+       HIRE — FINAL STAGE
+    ══════════════════════════════════════ */
+    #hire{padding:120px 80px;background:#FAFAFA;position:relative;overflow:hidden;text-align:center}
+    #hire .hjp{color:#888}
+    #hire .htl{color:#09090D}
+    #hire .hdescr{color:#555}
+    #hire .po{color:#888;border-color:rgba(0,0,0,.15);background:#fff}
+    #hire .po:hover,#hire .po.on{border-color:var(--orange);color:var(--orange);background:rgba(255,82,0,.08)}
+    #hire .pslabel{color:#888}
+    #hire .hnote{color:#888}
+    #hire::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,82,0,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,82,0,.02) 1px,transparent 1px);background-size:48px 48px}
+    .tron{position:absolute;bottom:0;left:0;right:0;height:340px;pointer-events:none;background:linear-gradient(transparent,rgba(255,82,0,.05)),repeating-linear-gradient(0deg,rgba(255,82,0,.1) 0,rgba(255,82,0,.1) 1px,transparent 1px,transparent 44px),repeating-linear-gradient(90deg,rgba(255,82,0,.1) 0,rgba(255,82,0,.1) 1px,transparent 1px,transparent 44px);transform:perspective(400px) rotateX(55deg);transform-origin:bottom}
+    .hglow{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;pointer-events:none;background:radial-gradient(ellipse,rgba(255,82,0,.08) 0%,transparent 70%)}
+    .hin{position:relative;z-index:1}
+    .fstage{display:inline-flex;align-items:center;gap:12px;font-family:var(--FP);font-size:7px;letter-spacing:.18em;color:var(--orange);border:1px solid rgba(255,82,0,.25);padding:6px 16px;margin-bottom:22px;background:rgba(255,82,0,.04);animation:ppulse 2s infinite}
+    .hjp{font-family:var(--FM);font-size:11px;color:var(--muted);letter-spacing:.24em;margin-bottom:20px}
+    .htl{font-family:var(--FT);font-size:clamp(36px,6vw,84px);font-weight:900;color:var(--white);line-height:.95;letter-spacing:-.02em;margin-bottom:20px}
+    .htl em{color:var(--orange);font-style:normal;text-shadow:0 0 60px rgba(255,82,0,.35);animation:gt-big 6s infinite 1s}
+    .hdescr{font-size:17px;color:var(--gray);line-height:1.75;max-width:520px;margin:0 auto 40px}
+    .hacts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .psel{display:flex;gap:2px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+    .po{font-family:var(--FP);font-size:7px;letter-spacing:.08em;padding:10px 16px;border:1px solid var(--border-h);color:var(--muted);cursor:none;transition:all .2s;background:var(--card)}
+    .po:hover,.po.on{border-color:var(--orange);color:var(--orange);background:rgba(255,82,0,.08);box-shadow:0 0 12px rgba(255,82,0,.15)}
+    .pslabel{font-family:var(--FP);font-size:6px;color:var(--muted);letter-spacing:.12em;margin-bottom:10px}
+    .hnote{font-family:var(--FP);font-size:6px;color:var(--muted);letter-spacing:.1em;margin-top:28px}
+    .hform{max-width:560px;margin:0 auto 36px;text-align:left;display:flex;flex-direction:column;gap:14px}
+    .hf-row{display:flex;gap:14px}
+    .hf-row .hf-field{flex:1}
+    .hf-field label{display:block;font-family:var(--FP);font-size:6px;letter-spacing:.1em;color:var(--muted);margin-bottom:8px}
+    .hf-field label em{color:var(--orange);font-style:normal}
+    .hf-field input,.hf-field textarea{width:100%;font-family:var(--FB);font-size:15px;color:var(--gray);background:var(--card);border:1px solid var(--border-h);padding:12px 14px;transition:border-color .2s,box-shadow .2s;cursor:auto}
+    #hire .hf-field input,#hire .hf-field textarea{background:#fff;color:#333;border-color:rgba(0,0,0,.15)}
+    .hf-field input:focus,.hf-field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 12px rgba(255,82,0,.15)}
+    .hf-field textarea{resize:vertical;min-height:96px;font-family:inherit}
+    @media(max-width:600px){.hf-row{flex-direction:column}}
+
+    /* ══════════════════════════════════════
+       FOOTER — EPIC
+    ══════════════════════════════════════ */
+    footer{background:var(--surface);border-top:1px solid var(--border);position:relative;overflow:hidden}
+    .ft-pxbar{height:4px;background:repeating-linear-gradient(90deg,var(--orange) 0,var(--orange) 8px,transparent 8px,transparent 14px);opacity:.35}
+    .ft-brand{display:flex;align-items:center;justify-content:space-between;padding:40px 60px 0}
+    .ft-logo{display:flex;align-items:center;gap:12px}
+    .fte{width:44px;height:44px;border:2px solid var(--orange);display:grid;place-items:center;animation:ppulse 3s infinite}
+    .fte::before{content:'九';font-family:var(--FM);font-size:22px;color:var(--orange)}
+    .ftn{font-family:var(--FT);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--white)}
+    .ftn em{color:var(--orange);font-style:normal}
+    .ft-tag{font-family:var(--FM);font-size:11px;color:var(--muted)}
+    .ft-giant{position:relative;padding:32px 60px 24px;overflow:hidden;border-bottom:1px solid var(--border)}
+    .ft-giant-text{font-family:var(--FT);font-size:clamp(70px,14vw,200px);font-weight:900;line-height:.88;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px rgba(255,82,0,.4);user-select:none;pointer-events:none}
+    .ft-giant-text.go{color:rgba(255,82,0,.22);-webkit-text-stroke:1.5px rgba(255,82,0,.55)}
+    .ft-stats{display:flex;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .ft-stat{flex:1;padding:24px 0;text-align:center;border-right:1px solid var(--border);transition:background .2s}
+    .ft-stat:last-child{border-right:none}
+    .ft-stat:hover{background:rgba(255,82,0,.03)}
+    .fst-n{font-family:var(--FT);font-size:32px;font-weight:900;color:var(--orange);line-height:1;text-shadow:0 0 20px rgba(255,82,0,.2)}
+    .fst-l{font-family:var(--FP);font-size:6px;color:var(--muted);letter-spacing:.1em;margin-top:6px}
+    .ft-mid{display:flex;align-items:flex-start;justify-content:space-between;padding:40px 60px;border-bottom:1px solid var(--border);gap:60px}
+    .ft-manifesto{max-width:420px}
+    .ftm-title{font-family:var(--FT);font-size:20px;font-weight:700;color:var(--white);letter-spacing:.04em;margin-bottom:10px}
+    .ftm-title em{color:var(--orange);font-style:normal}
+    .ftm-body{font-size:14px;color:var(--gray);line-height:1.8}
+    .ft-social{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+    .ft-soc-label{font-family:var(--FP);font-size:6px;color:var(--muted);letter-spacing:.12em}
+    .ft-soc-row{display:flex;gap:6px}
+    .psoc{width:56px;height:56px;border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;background:var(--card);transition:border-color .2s,background .2s,box-shadow .3s,transform .2s;cursor:none;text-decoration:none;image-rendering:pixelated}
+    .psoc:hover{border-color:var(--orange);background:rgba(255,82,0,.08);box-shadow:0 0 16px rgba(255,82,0,.2);transform:translateY(-2px)}
+    .ft-nav{display:flex;padding:0 60px;border-bottom:1px solid var(--border)}
+    .ft-nav a{font-family:var(--FP);font-size:7px;letter-spacing:.1em;color:var(--gray);text-decoration:none;padding:18px 20px;border-right:1px solid var(--border);transition:color .2s,background .2s}
+    .ft-nav a:hover{color:var(--orange);background:rgba(255,82,0,.04)}
+    .ft-bottom{display:flex;align-items:center;justify-content:space-between;padding:20px 60px}
+    .ft-copy{font-family:var(--FM);font-size:10px;color:var(--muted)}
+    .ft-copy em{color:var(--orange);font-style:normal}
+    .ft-jp{font-family:var(--FM);font-size:10px;color:var(--muted)}
+
+    /* ══════════════════════════════════════
+       ACHIEVEMENT TOAST
+    ══════════════════════════════════════ */
+    #ach{position:fixed;bottom:32px;right:32px;z-index:500;background:var(--card);border:1px solid var(--orange);padding:14px 18px;display:flex;align-items:center;gap:14px;transform:translateX(140%);transition:transform .4s cubic-bezier(.17,.67,.29,1.3);min-width:260px;box-shadow:0 0 24px rgba(255,82,0,.2)}
+    #ach.show{transform:translateX(0)}
+    .ach-ic{width:36px;height:36px;flex-shrink:0;background:rgba(255,82,0,.12);border:1px solid rgba(255,82,0,.3);display:flex;align-items:center;justify-content:center}
+    .ach-title{font-family:var(--FP);font-size:6px;color:var(--orange);letter-spacing:.1em;margin-bottom:3px}
+    .ach-name{font-family:var(--FP);font-size:8px;color:var(--white);letter-spacing:.05em}
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    /* ══════════════════════════════════════
+       HAMBURGER + MOBILE MENU
+    ══════════════════════════════════════ */
+    .nav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:1px solid rgba(255,82,0,.3);padding:8px 9px;cursor:none;margin-left:auto;flex-shrink:0}
+    .nav-ham span{display:block;width:20px;height:2px;background:var(--orange);transition:transform .25s,opacity .25s,width .25s;transform-origin:center}
+    .nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-ham.open span:nth-child(2){opacity:0;width:0}
+    .nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    #mob-menu{position:fixed;inset:60px 0 0 0;z-index:195;background:rgba(9,9,13,.97);backdrop-filter:blur(20px);border-top:1px solid rgba(255,82,0,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;transform:translateX(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);pointer-events:none}
+    #mob-menu.open{transform:translateX(0);pointer-events:all}
+    #mob-menu ul{list-style:none;width:100%;max-width:340px;padding:0 24px;display:flex;flex-direction:column;gap:6px}
+    #mob-menu a{font-family:var(--FP);font-size:11px;letter-spacing:.15em;color:var(--gray);text-decoration:none;padding:18px 20px;display:flex;align-items:center;gap:12px;border:1px solid var(--border);background:var(--card);transition:color .2s,border-color .2s,background .2s,transform .15s}
+    #mob-menu a::before{content:'▶';font-size:7px;color:var(--orange);opacity:.5;transition:opacity .2s}
+    #mob-menu a:hover{color:var(--orange);border-color:rgba(255,82,0,.35);background:rgba(255,82,0,.06);transform:translateX(4px)}
+    #mob-menu a:hover::before{opacity:1}
+    #mob-menu .mob-hire{background:var(--orange);color:#000;border-color:var(--orange);font-weight:700}
+    #mob-menu .mob-hire::before{color:#000;opacity:.8}
+    #mob-menu .mob-hire:hover{background:var(--orange-l);transform:translateX(4px)}
+    .mob-label{font-family:var(--FM);font-size:9px;color:var(--muted);letter-spacing:.15em;margin-bottom:8px;text-align:center;width:100%;max-width:340px;padding:0 24px}
+
+    @media(max-width:1100px){
+      nav{padding:0 20px}.nav-arc,.nav-links,.nav-cta{display:none}
+      .nav-ham{display:flex}
+      .hero-inner{padding:60px 24px 120px}.hstats,.hud-frame{display:none}
+      #games,#service,#about,#process,#hire{padding:72px 24px}
+      .agrid{grid-template-columns:1fr;gap:44px}
+      .psteps{grid-template-columns:1fr 1fr}
+      .ft-brand,.ft-stats,.ft-mid,.ft-nav,.ft-bottom,.ft-giant{padding-left:24px;padding-right:24px}
+      .ft-mid{flex-direction:column;gap:32px}.ft-social{align-items:flex-start}
+      .stband{padding:60px 24px}
+    }
+    @media(max-width:600px){
+      .htitle{font-size:clamp(42px,14vw,70px)}
+      .psteps{grid-template-columns:1fr}.pstep::after{display:none}
+      .hacts,.hactions{flex-direction:column;align-items:center}
+      .psel{flex-direction:column;align-items:center}
+      .ft-stats{flex-wrap:wrap}.ft-stat{min-width:50%}
+    }
+
+    /* ══════════════════════════════════════
+       SCROLL PROGRESS
+    ══════════════════════════════════════ */
+    #sprog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--orange);box-shadow:0 0 12px var(--oglow),0 0 28px rgba(255,82,0,.25);z-index:99997;pointer-events:none;transition:width .08s linear}
+
+    /* ══════════════════════════════════════
+       BUTTON RIPPLE
+    ══════════════════════════════════════ */
+    .rpl{position:absolute;border-radius:50%;background:rgba(255,255,255,.2);transform:scale(0);animation:rpl-out .6s ease-out forwards;pointer-events:none}
+    @keyframes rpl-out{to{transform:scale(5);opacity:0}}
+    /* click flash for primary buttons */
+    .bp:active,.nav-cta:active{filter:brightness(1.4);transition:filter .05s}
+    /* stronger hover states */
+    .nav-links a{transition:color .15s,text-shadow .15s,letter-spacing .15s}
+    .nav-links a:hover{letter-spacing:.14em;text-shadow:0 0 14px rgba(255,82,0,.6)}
+    /* card descriptions brighter */
+    .gdesc,.sdesc,.pdesc,.ftm-body{font-size:14px;line-height:1.75}
+    .hdescr{font-size:18px;color:#C8C8D8;line-height:1.8}
+
+    /* ══════════════════════════════════════
+       CLIENTS SECTION
+    ══════════════════════════════════════ */
+    #clients{padding:100px 80px;background:#FAFAFA;border-top:1px solid rgba(0,0,0,.1);position:relative;overflow:hidden}
+    #clients .gn{top:-20px;right:36px;left:auto}
+    #clients .seh{border-bottom-color:rgba(0,0,0,.1)}
+    #clients .bt{color:#09090D}
+    #clients .seb{color:#888}
+    #clients .sea{color:#888}
+    .logo-wrap{position:relative;margin:36px -80px 0;width:calc(100% + 160px);display:flex;flex-direction:column;gap:6px}
+    .logo-row{overflow:hidden;padding:2px 0;position:relative}
+    .logo-slide{display:flex;gap:6px;width:max-content;will-change:transform;transform:translate3d(0,0,0);backface-visibility:hidden}
+    .logo-slide.sl{animation:lscroll-l 90s linear infinite}
+    .logo-slide.sr{animation:lscroll-r 100s linear infinite}
+    .logo-slide:hover{animation-play-state:paused}
+    @keyframes lscroll-l{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-50%,0,0)}}
+    @keyframes lscroll-r{0%{transform:translate3d(-50%,0,0)}100%{transform:translate3d(0,0,0)}}
+    .lbox{flex-shrink:0;display:flex;align-items:center;gap:16px;padding:24px 40px;background:var(--card);border:1px solid var(--border);font-family:var(--FT);font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--gray);white-space:nowrap;transition:border-color .22s,color .22s,background .22s,box-shadow .22s;cursor:default;user-select:none;position:relative;overflow:hidden}
+    .lbox::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .28s}
+    .lbox:hover{border-color:rgba(255,82,0,.45);color:var(--white);background:var(--card-h);box-shadow:0 0 20px rgba(255,82,0,.12)}
+    .lbox:hover::before{transform:scaleX(1)}
+    .lbox-ic{color:rgba(255,82,0,.35);font-size:14px;transition:color .22s;font-family:var(--FM)}
+    .lbox:hover .lbox-ic{color:var(--orange)}
+    .lbox-logo{width:26px;height:26px;flex-shrink:0;color:rgba(255,82,0,.5);transition:color .22s}
+    .lbox:hover .lbox-logo{color:var(--orange)}
+    .lbox-logo-img{max-height:28px;max-width:78px;height:auto;width:auto;flex-shrink:0;opacity:.75;transition:opacity .22s;image-rendering:pixelated}
+    .lbox:hover .lbox-logo-img{opacity:1}
+    .lbox-logo-img.invert{filter:brightness(0) invert(1)}
+    .partner-note{font-family:var(--FM);font-size:10px;color:#888;letter-spacing:.12em;margin-top:32px;padding-top:20px;border-top:1px solid rgba(0,0,0,.1);position:relative;z-index:1;text-align:center}
+    .partner-note em{color:var(--orange);font-style:normal}
+
+    @media(max-width:1100px){
+      #clients{padding:72px 24px}
+      .logo-wrap{margin:36px -24px 0;width:calc(100% + 48px)}
+      .lbox{padding:18px 28px;font-size:11px;gap:12px}
+      .lbox-logo-img{max-height:22px;max-width:60px}
+      .lbox-logo{width:20px;height:20px}
+    }
+    @media(max-width:600px){
+      #clients{padding:56px 16px}
+      .logo-wrap{margin:36px -16px 0;width:calc(100% + 32px)}
+      .lbox{padding:14px 20px;font-size:10px;gap:10px}
+    }
+  </style>
 </head>
-<body class="body">
-  <div class="page-wrapper">
-    <div class="navbar">
-      <div class="container c-nav">
-        <a href="index.html" aria-current="page" class="nav-brand w-inline-block w--current"><img src="images/9hgNewLogo.png" loading="lazy" width="138" sizes="138px" alt="" srcset="images/9hgNewLogo-p-500.png 500w, images/9hgNewLogo-p-800.png 800w, images/9hgNewLogo-p-1080.png 1080w, images/9hgNewLogo.png 1495w" class="image-2"></a>
-        <div class="nav-menu">
-          <div data-w-id="956d33b2-e7af-c929-0948-82cbf23c4fde" class="nav-button">
-            <div class="nav-menu-line _1"></div>
-            <div class="nav-menu-line _2"></div>
-            <div class="nav-menu-line _3"></div>
-          </div>
-          <div class="navbar-collapse">
-            <a href="index.html" aria-current="page" class="navbar-menu-link w--current">Home</a>
-            <a href="services.html" class="navbar-menu-link">SERVICES</a>
-            <a href="contact.html" class="navbar-menu-link">Contact</a>
-          </div>
-        </div>
+<body>
+
+<!-- Scroll progress -->
+<div id="sprog"></div>
+<!-- Cursor -->
+<div id="cur"></div><div id="cur-ring"></div>
+<!-- Global glitch overlay -->
+<div id="gover"></div>
+<!-- CRT -->
+<div id="crt"></div>
+
+<!-- Achievement toast -->
+<div id="ach">
+  <div class="ach-ic">
+    <svg width="20" height="20" viewBox="0 0 8 8" shape-rendering="crispEdges">
+      <rect x="3" y="0" width="2" height="2" fill="#FF5200"/>
+      <rect x="1" y="2" width="6" height="1" fill="#FF5200"/>
+      <rect x="0" y="3" width="8" height="3" fill="#FF5200"/>
+      <rect x="2" y="6" width="1" height="2" fill="#FF5200"/>
+      <rect x="5" y="6" width="1" height="2" fill="#FF5200"/>
+      <rect x="1" y="7" width="2" height="1" fill="#FF5200"/>
+      <rect x="5" y="7" width="2" height="1" fill="#FF5200"/>
+    </svg>
+  </div>
+  <div>
+    <div class="ach-title">ACHIEVEMENT UNLOCKED</div>
+    <div class="ach-name" id="ach-name">FOUND THE STUDIO</div>
+  </div>
+</div>
+
+<!-- Boot -->
+<div id="boot">
+  <div class="b-pre"><b>NINE HERMITS GAMES v2.0</b><br>BIOS 1994 · RAM 64K · ROM 512K<br>ナイン・ハーミッツ · INITIALIZING...</div>
+  <div class="b-logo">NINE HERMITS</div>
+  <div class="b-jp">ナイン・ハーミッツ・ゲームズ</div>
+  <div class="b-bar-bg"><div class="b-bar"></div></div>
+  <div class="b-txt">LOADING GAME DATA... PLEASE WAIT</div>
+  <div class="b-coin">▶ INSERT COIN ◀</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="nav-logo">
+    <img src="Assets/logo-9HG.png" alt="Nine Hermits Games" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#games">GAMES</a></li>
+    <li><a href="#service">SERVICES</a></li>
+    <li><a href="#about">STUDIO</a></li>
+    <li><a href="#process">PROCESS</a></li>
+  </ul>
+  <a href="#hire" class="nav-cta">TALK TO US →</a>
+  <button class="nav-ham" id="nav-ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mob-menu">
+  <div class="mob-label">// ナビゲーション · NAVIGATION</div>
+  <ul>
+    <li><a href="#games">GAMES</a></li>
+    <li><a href="#service">SERVICES</a></li>
+    <li><a href="#about">STUDIO</a></li>
+    <li><a href="#process">PROCESS</a></li>
+    <li><a href="#hire" class="mob-hire">TALK TO US →</a></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════
+     HERO — VIDEO BACKGROUND
+═══════════════════════════════════ -->
+<section id="home">
+  <!-- VIDEO — full opacity, no dark overlay -->
+  <video id="hero-vid" autoplay muted loop playsinline>
+    <source src="Assets/Ninja_reveal_with_lightning_strike_202607131552.mp4" type="video/mp4"/>
+  </video>
+  <!-- edge vignette for text readability only -->
+  <div class="hero-vignette"></div>
+  <!-- sweeping scan line -->
+  <div class="hero-scan"></div>
+  <!-- floating kanji -->
+  <div class="hero-kanji">九</div>
+
+  <!-- HUD: bottom-left -->
+  <div class="hud-frame hud-bl">
+    <div class="hud-line">// MISSION: BUILD LEGENDARY GAMES</div>
+    <div class="hud-line">// WORLD: ONLINE · SECTOR: 九</div>
+  </div>
+
+  <!-- Main content -->
+  <div class="hero-inner">
+    <h1 class="htitle">DESIGNED<br><span class="gl">TO ENGAGE.</span></h1>
+    <p class="hsub">NINE HERMITS GAMES // ゲーム開発スタジオ</p>
+    <p class="hdesc">We engineer experiences at the intersection of behavioral design, interactive systems, and strategic research. Every world we build is designed to move people — and keep them there.</p>
+    <div class="hactions">
+      <a href="#games" class="bp">▶ EXPLORE GAMES</a>
+      <a href="#hire" class="bs">TALK TO US</a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="hstats">
+    <div class="hs pxc"><div class="pxcb"><div class="hs-n" data-count="300">0</div><div class="hs-l">GAMES</div></div></div>
+    <div class="hs pxc"><div class="pxcb"><div class="hs-n" data-count="440000">0</div><div class="hs-l">PLAYERS</div></div></div>
+    <div class="hs pxc"><div class="pxcb"><div class="hs-n" data-count="100">0</div><div class="hs-l">RETENTION</div></div></div>
+  </div>
+  <div class="scroll-hint"><span>SCROLL</span><div class="sarr"></div></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mband"><div class="mtrack">
+  <span>GAME DEVELOPMENT</span><span class="sep"> ★ </span><span>WORLD BUILDING</span><span class="sep"> ★ </span>
+  <span>PIXEL ART</span><span class="sep"> ★ </span><span>3D ENVIRONMENTS</span><span class="sep"> ★ </span>
+  <span>LEVEL DESIGN</span><span class="sep"> ★ </span><span>SOUND DESIGN</span><span class="sep"> ★ </span>
+  <span>ゲーム開発</span><span class="sep"> ★ </span><span>PUBLISHING</span><span class="sep"> ★ </span>
+  <span>UI / UX</span><span class="sep"> ★ </span><span>GAME MECHANICS</span><span class="sep"> ★ </span>
+  <span>GAME DEVELOPMENT</span><span class="sep"> ★ </span><span>WORLD BUILDING</span><span class="sep"> ★ </span>
+  <span>PIXEL ART</span><span class="sep"> ★ </span><span>3D ENVIRONMENTS</span><span class="sep"> ★ </span>
+  <span>LEVEL DESIGN</span><span class="sep"> ★ </span><span>SOUND DESIGN</span><span class="sep"> ★ </span>
+  <span>ゲーム開発</span><span class="sep"> ★ </span><span>PUBLISHING</span><span class="sep"> ★ </span>
+  <span>UI / UX</span><span class="sep"> ★ </span><span>GAME MECHANICS</span><span class="sep"> ★ </span>
+</div></div>
+
+<!-- GAMES -->
+<section id="games" class="grid-bg">
+  <div class="gn">01</div>
+  <div class="seh fu">
+    <div><div class="seb">// ゲーム · STAGE SELECT</div><h2 class="bt scramble" data-text="OUR GAMES">OUR <span class="acc">GAMES</span></h2></div>
+    <div class="sea">BUILT WITH<br>OBSESSION</div>
+  </div>
+  <div class="gg">
+    <div class="gc pxc crt-card" data-popup="Developed in partnership with Dilmah Ceylon Tea Company PLC., Legacy of the Leaf is a 3D third-person RPG/adventure PC game where players explore the living world of Ceylon tea. Entertainment meets education — uncovering the brand's heritage, values, and story through deep immersive gameplay and discovery."><div class="pxcb">
+      <div class="gi"><div class="gph">LOTL</div><div class="sw"></div><div class="gbadge bl">◉ LIVE</div></div>
+      <div class="gb"><div class="ggenre">★ ADVENTURE RPG</div><div class="gname">DILMAH: LEGACY OF THE LEAF</div>
+      <div class="gdesc">A 3D third-person RPG bringing Dilmah's story, values, and heritage to life. Explore, discover, and experience the world of Ceylon tea through immersive gameplay and education.</div>
+      <div class="gfoot"><div class="gjp">// OFFICIAL DILMAH PARTNERSHIP</div><div class="garr">→</div></div></div>
+    </div></div>
+    <div class="gc pxc crt-card" data-popup="MIDAN is a team-based trivia strategy game played on a shared TV using mobile phones as controllers. Two teams compete on speed and accuracy — strong performance unlocks soldiers and special attacks deployed on a strategic world map. Knowledge, tactics, and sabotage collide in every dramatic round."><div class="pxcb">
+      <div class="gi"><div class="gph">MDN</div><div class="sw"></div><div class="gbadge bl">◉ LIVE</div></div>
+      <div class="gb"><div class="ggenre">★ TRIVIA STRATEGY</div><div class="gname">MIDAN</div>
+      <div class="gdesc">Fast-paced team trivia played on a shared screen. Answer questions to unlock soldiers, conquer cities, and outmaneuver your rivals on a live tactical map.</div>
+      <div class="gfoot"><div class="gjp">// SHARED-SCREEN MULTIPLAYER</div><div class="garr">→</div></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- GAME DETAIL MODAL -->
+<div id="game-modal" class="gm-overlay">
+  <div class="gm-box pxc">
+    <button class="gm-close" aria-label="Close">✕</button>
+    <div class="gm-genre"></div>
+    <div class="gm-name"></div>
+    <div class="gm-body"></div>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<div class="stband">
+  <div class="stin fu">
+    <div class="stk">// 私たちは世界を構築する</div>
+    <div class="stjp">NINE HERMITS GAMES · ゲームの未来を作る</div>
+    <div class="sttxt">NOT JUST GAMES.<br><span class="hl">EXPERIENCES THAT STAY WITH YOU.</span></div>
+    <div class="stsub">We build for players who feel everything. Welcome to Nine Hermits.</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="service" class="grid-bg">
+  <div class="gn" style="right:36px;top:-20px;left:auto">02</div>
+  <div class="seh fu">
+    <div><div class="seb">// サービス · SKILL TREE</div><h2 class="bt">WHAT WE <span class="acc">DO</span></h2></div>
+    <div class="sea">FULL-STACK<br>GAME STUDIO</div>
+  </div>
+  <div class="sg">
+    <div class="sc pxc crt-card"><div class="pxcb">
+      <div class="snum">01 // ゲーム開発</div>
+      <div class="pxi">
+        <svg width="36" height="28" viewBox="0 0 18 14" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="2" width="12" height="8" fill="#FF5200"/>
+          <rect x="1" y="7" width="4" height="5" fill="#FF5200"/>
+          <rect x="13" y="7" width="4" height="5" fill="#FF5200"/>
+          <rect x="4" y="4" width="1" height="4" fill="rgba(0,0,0,.55)"/>
+          <rect x="3" y="5" width="3" height="2" fill="rgba(0,0,0,.55)"/>
+          <rect x="12" y="4" width="1" height="1" fill="rgba(0,0,0,.55)"/>
+          <rect x="14" y="4" width="1" height="1" fill="rgba(0,0,0,.55)"/>
+          <rect x="13" y="3" width="1" height="1" fill="rgba(0,0,0,.55)"/>
+          <rect x="13" y="5" width="1" height="1" fill="rgba(0,0,0,.55)"/>
+          <rect x="8" y="5" width="2" height="2" fill="rgba(0,0,0,.4)"/>
+        </svg>
+      </div>
+      <div class="sname">GAME DEVELOPMENT</div>
+      <div class="sdesc">End-to-end game development for brands, enterprises, and consumers. PC, mobile, and web — built in Unity with purpose.</div>
+      <div class="stags"><span class="stag">UNITY</span><span class="stag">UNREAL</span><span class="stag">PC</span><span class="stag">MOBILE</span><span class="stag">3D</span></div>
+      <div class="sjp">開発</div>
+    </div></div>
+    <div class="sc pxc crt-card"><div class="pxcb">
+      <div class="snum">02 // ウェブ3・ブロックチェーン</div>
+      <div class="pxi">
+        <svg width="36" height="18" viewBox="0 0 16 8" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="2" width="4" height="4" fill="#FF5200"/>
+          <rect x="6" y="2" width="4" height="4" fill="#FF5200"/>
+          <rect x="12" y="2" width="4" height="4" fill="#FF5200"/>
+          <rect x="4" y="3" width="2" height="2" fill="#FF5200" opacity=".55"/>
+          <rect x="10" y="3" width="2" height="2" fill="#FF5200" opacity=".55"/>
+          <rect x="1" y="3" width="2" height="2" fill="rgba(0,0,0,.45)"/>
+          <rect x="7" y="3" width="2" height="2" fill="rgba(0,0,0,.45)"/>
+          <rect x="13" y="3" width="2" height="2" fill="rgba(0,0,0,.45)"/>
+        </svg>
+      </div>
+      <div class="sname">WEB3 & BLOCKCHAIN</div>
+      <div class="sdesc">Token ecosystems, NFT rewards, and on-chain game mechanics. We build Web3 platforms players actually want to use.</div>
+      <div class="stags"><span class="stag">SOLANA</span><span class="stag">EVM</span><span class="stag">NFT</span><span class="stag">DEFI</span></div>
+      <div class="sjp">鎖</div>
+    </div></div>
+    <div class="sc pxc crt-card"><div class="pxcb">
+      <div class="snum">03 // ブランドゲームデザイン</div>
+      <div class="pxi">
+        <svg width="34" height="28" viewBox="0 0 12 10" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="1" width="5" height="8" fill="#FF5200"/>
+          <rect x="7" y="1" width="5" height="8" fill="#FF5200"/>
+          <rect x="5" y="0" width="2" height="9" fill="#FF5200" opacity=".7"/>
+          <rect x="1" y="2" width="3" height="1" fill="rgba(0,0,0,.4)"/>
+          <rect x="1" y="4" width="3" height="1" fill="rgba(0,0,0,.4)"/>
+          <rect x="8" y="2" width="3" height="1" fill="rgba(0,0,0,.4)"/>
+          <rect x="8" y="4" width="3" height="1" fill="rgba(0,0,0,.4)"/>
+        </svg>
+      </div>
+      <div class="sname">BRANDED GAME DESIGN</div>
+      <div class="sdesc">We turn brand stories into interactive worlds. Education, heritage, and identity — delivered through gameplay, not advertising.</div>
+      <div class="stags"><span class="stag">NARRATIVE</span><span class="stag">RPG</span><span class="stag">EDU</span><span class="stag">IP</span></div>
+      <div class="sjp">物語</div>
+    </div></div>
+    <div class="sc pxc crt-card"><div class="pxcb">
+      <div class="snum">04 // プレイ・トゥ・ウィン</div>
+      <div class="pxi">
+        <svg width="30" height="36" viewBox="0 0 10 12" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="0" width="6" height="5" fill="#FF5200"/>
+          <rect x="0" y="1" width="2" height="3" fill="#FF5200"/>
+          <rect x="8" y="1" width="2" height="3" fill="#FF5200"/>
+          <rect x="4" y="5" width="2" height="3" fill="#FF5200"/>
+          <rect x="3" y="8" width="4" height="1" fill="#FF5200"/>
+          <rect x="2" y="9" width="6" height="2" fill="#FF5200"/>
+          <rect x="3" y="1" width="1" height="3" fill="rgba(0,0,0,.4)"/>
+          <rect x="4" y="2" width="2" height="2" fill="#fff" opacity=".5"/>
+        </svg>
+      </div>
+      <div class="sname">PLAY-TO-WIN PLATFORMS</div>
+      <div class="sdesc">Geo-activated, carrier-integrated reward platforms built for Gen Z. Real prizes. Real engagement. Mobile-first from day one.</div>
+      <div class="stags"><span class="stag">GEO</span><span class="stag">REWARDS</span><span class="stag">MOBILE</span><span class="stag">B2B</span></div>
+      <div class="sjp">報酬</div>
+    </div></div>
+    <div class="sc pxc crt-card"><div class="pxcb">
+      <div class="snum">05 // ゲーミフィケーション</div>
+      <div class="pxi">
+        <svg width="36" height="36" viewBox="0 0 10 10" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="0" width="4" height="1" fill="#FF5200"/><rect x="3" y="9" width="4" height="1" fill="#FF5200"/>
+          <rect x="0" y="3" width="1" height="4" fill="#FF5200"/><rect x="9" y="3" width="1" height="4" fill="#FF5200"/>
+          <rect x="1" y="1" width="2" height="2" fill="#FF5200"/><rect x="7" y="1" width="2" height="2" fill="#FF5200"/>
+          <rect x="1" y="7" width="2" height="2" fill="#FF5200"/><rect x="7" y="7" width="2" height="2" fill="#FF5200"/>
+          <rect x="1" y="3" width="8" height="4" fill="#FF5200"/><rect x="3" y="1" width="4" height="8" fill="#FF5200"/>
+          <rect x="3" y="3" width="4" height="4" fill="#09090D"/><rect x="4" y="2" width="2" height="6" fill="#09090D"/>
+        </svg>
+      </div>
+      <div class="sname">GAMIFICATION</div>
+      <div class="sdesc">Experts in B2B mass gamification solutions development, custom made for client needs. We design training simulators, lab tools, and management games for enterprise clients — every system engineered around your workflows, data, and goals. Complex systems, made playable.</div>
+      <div class="stags"><span class="stag">UNITY</span><span class="stag">UNREAL</span><span class="stag">iOS</span><span class="stag">ANDROID</span><span class="stag">SIM</span><span class="stag">GAMIFICATION</span></div>
+      <div class="sjp">遊戯化</div>
+    </div></div>
+    <div class="sc pxc crt-card"><div class="pxcb">
+      <div class="snum">06 // 戦略・コンサルティング</div>
+      <div class="pxi">
+        <svg width="30" height="30" viewBox="0 0 10 10" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="8" height="8" fill="#FF5200"/>
+          <rect x="3" y="3" width="4" height="4" fill="#09090D"/>
+          <rect x="4" y="4" width="2" height="2" fill="#FF5200"/>
+        </svg>
+      </div>
+      <div class="sname">STRATEGY & CONSULTING</div>
+      <div class="sdesc">Game design consultation, gamification strategy, and behavioral product design. We've built it — we know what works.</div>
+      <div class="stags"><span class="stag">GAMIFY</span><span class="stag">PRODUCT</span><span class="stag">DATA</span><span class="stag">GOV</span></div>
+      <div class="sjp">相談</div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="seh fu">
+    <div><div class="seb">// スタジオ · PLAYER STATS</div><h2 class="bt">THE <span class="acc">STUDIO</span></h2></div>
+    <div class="sea">NINE HERMITS<br>ONE VISION</div>
+  </div>
+  <div class="agrid">
+    <div class="fu">
+      <h3 class="ah">DESIGNED TO ENGAGE.<br>BUILT TO <em>PLAY.</em></h3>
+      <p class="abody">We are a creative technology studio operating at the intersection of behavioral design, interactive systems, and strategic research.</p>
+      <p class="abody">While our foundation is in game development, we have evolved into a studio that builds original intellectual properties, gamified intelligence tools, and behavioral data architectures for clients ranging from brands to defense research agencies.</p>
+      <a href="#hire" class="bp" style="margin-top:14px">▶ START A PROJECT</a>
+    </div>
+    <div class="aright fu">
+      <div class="sr pxc"><div class="pxcb"><div class="sbn" data-count="300">0</div><div><div class="sti">GAMES DEVELOPED</div><div class="ssu">Across PC, Web and Mobile</div><div class="hpb"><div class="hpf" style="--w:.9"></div></div></div></div></div>
+      <div class="sr pxc"><div class="pxcb"><div class="sbn" data-count="440000">0</div><div><div class="sti">PLAYERS ONBOARDED WORLDWIDE</div><div class="ssu">Growing every day</div><div class="hpb"><div class="hpf" style="--w:.7"></div></div></div></div></div>
+      <div class="sr pxc"><div class="pxcb"><div class="sbn" data-count="11">0</div><div><div class="sti">YEARS IN THE INDUSTRY</div><div class="ssu">Passion refined by experience</div><div class="hpb"><div class="hpf" style="--w:.5"></div></div></div></div></div>
+      <div class="sr pxc"><div class="pxcb"><div class="sbn" data-count="100">0</div><div><div class="sti">CLIENT RETENTION</div><div class="ssu">Clients come back. Every time.</div><div class="hpb"><div class="hpf" style="--w:1"></div></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS & PARTNERS -->
+<section id="clients" class="grid-bg">
+  <div class="gn">03</div>
+  <div class="seh fu">
+    <div><div class="seb">// クライアント・パートナー · NETWORK</div><h2 class="bt">CLIENTS <span class="acc">&amp; PARTNERS</span></h2></div>
+    <div class="sea">TRUSTED BY THE INDUSTRY<br>POWERED BY THE BEST TECH</div>
+  </div>
+  <div class="logo-wrap">
+    <!-- Row 1 — scrolls left -->
+    <div class="logo-row">
+      <div class="logo-slide sl">
+        <div class="lbox"><img class="lbox-logo-img" src="https://www.dilmahtea.com/images/dilmah-logo.png" alt="Dilmah">DILMAH</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="Assets/myoutcomes.png" alt="MyOutcomes">MY OUTCOME</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/IAMF.jpg" alt="IAMF">IAMF</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="Assets/Duracan+Logo.png" alt="Duracan">DURACAN</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Riyadh_Air_Logo.svg" alt="Riyadh Air">RIYADH AIR</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 0a12 12 0 1012 12A12 12 0 0012 0zm0 23.52A11.52 11.52 0 1123.52 12 11.52 11.52 0 0112 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 01-5.804-2.978 2.859 2.859 0 00.65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 00-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 012.528-5.597 7.408 7.408 0 013.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 00.148.256 1.075 1.075 0 00.88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 01.387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"/></svg>UNREAL ENGINE</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"/></svg>UNITY</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/></svg>NVIDIA INCEPTION</div>
+        <div class="lbox"><img class="lbox-logo-img" src="https://www.reallusion.com/about/includes/image/press_resource_product/rl/reallusion-logo-horizontal-darkbg-white_2000x443.png" alt="Reallusion">REALLUSION</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z"/></svg>SONY PLAYSTATION</div>
+        <div class="lbox"><img class="lbox-logo-img" src="https://app.opengameprotocol.com/favicon.ico" alt="Open Game Protocol">OPEN GAME PROTOCOL</div>
+        <!-- duplicate for seamless loop -->
+        <div class="lbox"><img class="lbox-logo-img" src="https://www.dilmahtea.com/images/dilmah-logo.png" alt="Dilmah">DILMAH</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="Assets/myoutcomes.png" alt="MyOutcomes">MY OUTCOME</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/IAMF.jpg" alt="IAMF">IAMF</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="Assets/Duracan+Logo.png" alt="Duracan">DURACAN</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Riyadh_Air_Logo.svg" alt="Riyadh Air">RIYADH AIR</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 0a12 12 0 1012 12A12 12 0 0012 0zm0 23.52A11.52 11.52 0 1123.52 12 11.52 11.52 0 0112 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 01-5.804-2.978 2.859 2.859 0 00.65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 00-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 012.528-5.597 7.408 7.408 0 013.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 00.148.256 1.075 1.075 0 00.88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 01.387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"/></svg>UNREAL ENGINE</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"/></svg>UNITY</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/></svg>NVIDIA INCEPTION</div>
+        <div class="lbox"><img class="lbox-logo-img" src="https://www.reallusion.com/about/includes/image/press_resource_product/rl/reallusion-logo-horizontal-darkbg-white_2000x443.png" alt="Reallusion">REALLUSION</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z"/></svg>SONY PLAYSTATION</div>
+        <div class="lbox"><img class="lbox-logo-img" src="https://app.opengameprotocol.com/favicon.ico" alt="Open Game Protocol">OPEN GAME PROTOCOL</div>
       </div>
     </div>
-    <div class="section">
-      <div class="container">
-        <div class="home-hero">
-          <div class="hh-headings-wrapper hh5">
-            <h1 data-w-id="6de5dc03-333f-4e0a-5591-053160ebf416" style="opacity:0" class="hh-heading">STORIES IN PLAY...</h1>
-            <h1 data-w-id="a2ab355e-9d8c-4c7c-b940-2cc31ccc77fe" style="opacity:0" class="hh-heading">GAME DEV POWERHOUSE</h1>
-            <h1 data-w-id="e20cfac0-533b-f68c-09d5-5ac5278b3999" style="opacity:0" class="hh-heading">WITH GLOBAL REACH.</h1>
-          </div>
-          <div class="hh-image"></div>
-          <div class="hh-content">
-            <p class="paragraph-20px">PC GAMES</p>
-            <p class="paragraph-20px">CONSOLE GAMES</p>
-            <p class="paragraph-20px">MOBILE GAMES</p>
-            <p class="paragraph-20px">TELEGRAM GAMES</p>
-            <p class="paragraph-20px">MEME GAMES</p>
-          </div>
-          <div class="footer-carousel hp">
-            <div class="footer-carousel-wrapper hp"><img src="images/Unreal_Engine-Logo.wine.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/Unreal_Engine-Logo.wine-p-500.png 500w, images/Unreal_Engine-Logo.wine-p-800.png 800w, images/Unreal_Engine-Logo.wine-p-1080.png 1080w, images/Unreal_Engine-Logo.wine-p-1600.png 1600w, images/Unreal_Engine-Logo.wine-p-2000.png 2000w, images/Unreal_Engine-Logo.wine.png 3000w" class="footer-image _1 hp q"><img src="images/unity2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/unity2.png 500w, images/unity2.png 800w, images/unity2.png 1080w, images/unity2.png 1600w, images/unity2.png 2000w, images/unity2.png 2600w, images/unity2.png 3000w" class="footer-image _1 hp q"><img src="images/sony.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/sony-p-500.png 500w, images/sony-p-800.png 800w, images/sony-p-1080.png 1080w, images/sony-p-1600.png 1600w, images/sony-p-2000.png 2000w, images/sony-p-2600.png 2600w, images/sony.png 3000w" class="footer-image _1 hp q"><img src="images/nvidia2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/nvidia2.png 500w, images/nvidia2.png 800w, images/nvidia2.png 1080w, images/nvidia2.png 1600w, images/nvidia2.png 2000w, images/nvidia2.png 2600w, images/nvidia2.png 3000w" class="footer-image _1 hp q"><img src="images/sol.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/sol-p-500.png 500w, images/sol-p-800.png 800w, images/sol-p-1080.png 1080w, images/sol-p-1600.png 1600w, images/sol-p-2000.png 2000w, images/sol-p-2600.png 2600w, images/sol.png 3000w" class="footer-image _1 hp q"><img src="images/phan.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/phan-p-500.png 500w, images/phan-p-800.png 800w, images/phan-p-1080.png 1080w, images/phan-p-1600.png 1600w, images/phan-p-2000.png 2000w, images/phan-p-2600.png 2600w, images/phan.png 3000w" class="footer-image _1 hp q"><img src="images/dih.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/dih-p-500.png 500w, images/dih-p-800.png 800w, images/dih-p-1080.png 1080w, images/dih-p-1600.png 1600w, images/dih-p-2000.png 2000w, images/dih-p-2600.png 2600w, images/dih.png 3000w" class="footer-image _1 hp q"><img src="images/sriair2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/sriair2.png 500w, images/sriair2.png 800w, images/sriair2.png 1080w, images/sriair2.png 1600w, images/sriair2.png 2000w, images/sriair2.png 2600w, images/sriair2.png 3000w" class="footer-image _1 hp q"><img src="images/mobitel2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/mobitel2.png 500w, images/mobitel2.png 800w, images/mobitel2.png 1080w, images/mobitel2.png 1600w, images/mobitel2.png 2000w, images/mobitel2.png 2600w, images/mobitel2.png 3000w" class="footer-image _1 hp o"><img src="images/riyadh2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/riyadh2.png 500w, images/riyadh2.png 800w, images/riyadh2.png 1080w, images/riyadh2.png 1600w, images/riyadh2.png 2000w, images/riyadh2.png 2600w, images/riyadh2.png 3000w" class="footer-image _1 hp p"></div>
-            <div class="footer-carousel-wrapper hp"><img src="images/Unreal_Engine-Logo.wine.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/Unreal_Engine-Logo.wine-p-500.png 500w, images/Unreal_Engine-Logo.wine-p-800.png 800w, images/Unreal_Engine-Logo.wine-p-1080.png 1080w, images/Unreal_Engine-Logo.wine-p-1600.png 1600w, images/Unreal_Engine-Logo.wine-p-2000.png 2000w, images/Unreal_Engine-Logo.wine.png 3000w" class="footer-image _1 hp q"><img src="images/unity2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/unity2.png 500w, images/unity2.png 800w, images/unity2.png 1080w, images/unity2.png 1600w, images/unity2.png 2000w, images/unity2.png 2600w, images/unity2.png 3000w" class="footer-image _1 hp q"><img src="images/sony.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/sony-p-500.png 500w, images/sony-p-800.png 800w, images/sony-p-1080.png 1080w, images/sony-p-1600.png 1600w, images/sony-p-2000.png 2000w, images/sony-p-2600.png 2600w, images/sony.png 3000w" class="footer-image _1 hp q"><img src="images/nvidia2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/nvidia2.png 500w, images/nvidia2.png 800w, images/nvidia2.png 1080w, images/nvidia2.png 1600w, images/nvidia2.png 2000w, images/nvidia2.png 2600w, images/nvidia2.png 3000w" class="footer-image _1 hp q"><img src="images/sol.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/sol-p-500.png 500w, images/sol-p-800.png 800w, images/sol-p-1080.png 1080w, images/sol-p-1600.png 1600w, images/sol-p-2000.png 2000w, images/sol-p-2600.png 2600w, images/sol.png 3000w" class="footer-image _1 hp q"><img src="images/phan.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/phan-p-500.png 500w, images/phan-p-800.png 800w, images/phan-p-1080.png 1080w, images/phan-p-1600.png 1600w, images/phan-p-2000.png 2000w, images/phan-p-2600.png 2600w, images/phan.png 3000w" class="footer-image _1 hp q"><img src="images/dih.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/dih-p-500.png 500w, images/dih-p-800.png 800w, images/dih-p-1080.png 1080w, images/dih-p-1600.png 1600w, images/dih-p-2000.png 2000w, images/dih-p-2600.png 2600w, images/dih.png 3000w" class="footer-image _1 hp q"><img src="images/sriair2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/sriair2.png 500w, images/sriair2.png 800w, images/sriair2.png 1080w, images/sriair2.png 1600w, images/sriair2.png 2000w, images/sriair2.png 2600w, images/sriair2.png 3000w" class="footer-image _1 hp q"><img src="images/mobitel2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/mobitel2.png 500w, images/mobitel2.png 800w, images/mobitel2.png 1080w, images/mobitel2.png 1600w, images/mobitel2.png 2000w, images/mobitel2.png 2600w, images/mobitel2.png 3000w" class="footer-image _1 hp o"><img src="images/riyadh2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/riyadh2.png 500w, images/riyadh2.png 800w, images/riyadh2.png 1080w, images/riyadh2.png 1600w, images/riyadh2.png 2000w, images/riyadh2.png 2600w, images/riyadh2.png 3000w" class="footer-image _1 hp p"></div>
-            <div class="footer-carousel-wrapper hp"><img src="images/Unreal_Engine-Logo.wine.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/Unreal_Engine-Logo.wine-p-500.png 500w, images/Unreal_Engine-Logo.wine-p-800.png 800w, images/Unreal_Engine-Logo.wine-p-1080.png 1080w, images/Unreal_Engine-Logo.wine-p-1600.png 1600w, images/Unreal_Engine-Logo.wine-p-2000.png 2000w, images/Unreal_Engine-Logo.wine.png 3000w" class="footer-image _1 hp q"><img src="images/unity2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/unity2.png 500w, images/unity2.png 800w, images/unity2.png 1080w, images/unity2.png 1600w, images/unity2.png 2000w, images/unity2.png 2600w, images/unity2.png 3000w" class="footer-image _1 hp q"><img src="images/sony.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/sony-p-500.png 500w, images/sony-p-800.png 800w, images/sony-p-1080.png 1080w, images/sony-p-1600.png 1600w, images/sony-p-2000.png 2000w, images/sony-p-2600.png 2600w, images/sony.png 3000w" class="footer-image _1 hp q"><img src="images/nvidia2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/nvidia2.png 500w, images/nvidia2.png 800w, images/nvidia2.png 1080w, images/nvidia2.png 1600w, images/nvidia2.png 2000w, images/nvidia2.png 2600w, images/nvidia2.png 3000w" class="footer-image _1 hp q"><img src="images/sol.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/sol-p-500.png 500w, images/sol-p-800.png 800w, images/sol-p-1080.png 1080w, images/sol-p-1600.png 1600w, images/sol-p-2000.png 2000w, images/sol-p-2600.png 2600w, images/sol.png 3000w" class="footer-image _1 hp q"><img src="images/phan.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/phan-p-500.png 500w, images/phan-p-800.png 800w, images/phan-p-1080.png 1080w, images/phan-p-1600.png 1600w, images/phan-p-2000.png 2000w, images/phan-p-2600.png 2600w, images/phan.png 3000w" class="footer-image _1 hp q"><img src="images/dih.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/dih-p-500.png 500w, images/dih-p-800.png 800w, images/dih-p-1080.png 1080w, images/dih-p-1600.png 1600w, images/dih-p-2000.png 2000w, images/dih-p-2600.png 2600w, images/dih.png 3000w" class="footer-image _1 hp q"><img src="images/sriair2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/sriair2.png 500w, images/sriair2.png 800w, images/sriair2.png 1080w, images/sriair2.png 1600w, images/sriair2.png 2000w, images/sriair2.png 2600w, images/sriair2.png 3000w" class="footer-image _1 hp q"><img src="images/mobitel2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/mobitel2.png 500w, images/mobitel2.png 800w, images/mobitel2.png 1080w, images/mobitel2.png 1600w, images/mobitel2.png 2000w, images/mobitel2.png 2600w, images/mobitel2.png 3000w" class="footer-image _1 hp o"><img src="images/riyadh2.png" alt="" sizes="(max-width: 3000px) 100vw, 3000px" srcset="images/riyadh2.png 500w, images/riyadh2.png 800w, images/riyadh2.png 1080w, images/riyadh2.png 1600w, images/riyadh2.png 2000w, images/riyadh2.png 2600w, images/riyadh2.png 3000w" class="footer-image _1 hp p"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container no-top-padding">
-        <div class="home-about">
-          <div class="ha-images"><img class="ha-image _1" src="images/slickerthanaverage7.png" width="456" height="334" alt="" style="opacity:0" sizes="(max-width: 479px) 100vw, 456px" data-w-id="eea14672-1554-3bed-626e-24ca830e0ccc" srcset="images/slickerthanaverage7-p-500.png 500w, images/slickerthanaverage7-p-800.png 800w, images/slickerthanaverage7-p-1080.png 1080w, images/slickerthanaverage7.png 1456w"><img class="ha-image" src="images/dev_ninehermits4.png" width="456" height="334" alt="" style="opacity:0" sizes="(max-width: 479px) 100vw, 456px" data-w-id="eea14672-1554-3bed-626e-24ca830e0ccd" srcset="images/dev_ninehermits4-p-500.png 500w, images/dev_ninehermits4-p-800.png 800w, images/dev_ninehermits4-p-1080.png 1080w, images/dev_ninehermits4.png 1456w"><img class="ha-image _1" src="images/dev_ninehermits3.png" width="456" height="334" alt="" style="opacity:0" sizes="(max-width: 479px) 100vw, 456px" data-w-id="eea14672-1554-3bed-626e-24ca830e0cce" srcset="images/dev_ninehermits3-p-500.png 500w, images/dev_ninehermits3-p-800.png 800w, images/dev_ninehermits3.png 1024w"></div>
-          <div class="ha-content">
-            <div class="ha-wrapper">
-              <h4 data-w-id="46d6184b-8a16-b344-2b47-e514ad42919e" style="opacity:0" class="ha-heading">About us</h4>
-              <a href="#" class="button abt w-inline-block">
-                <div class="button-card-big">
-                  <div class="text-block-2">See more</div>
-                </div>
-                <div class="button-card-small"><img src="images/Vectors-Wrapper.svg" loading="lazy" width="25.25323486328125" height="25.25323486328125" alt="Arrow" class="button-arrow">
-                  <div class="button-hover"></div>
-                </div>
-              </a>
-            </div>
-            <div class="ha-paragraph">
-              <p data-w-id="5800956d-6723-e959-4707-02b01bf012d1" style="opacity:0" class="paragraph-30px">We&#x27;re a global game development powerhouse turning Web3 dreams into reality! From blockchain to the metaverse, we connect millions to the future of gaming. With teams in the UK, UAE, Canada, and Sri Lanka, we mix creativity and innovation to level up the gaming universe.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div data-w-id="b882098f-ce7b-c66f-1213-c8396a68ff7b" class="section">
-      <div class="container">
-        <div class="home-spot">
-          <div data-is-ix2-target="1" class="hs-lottie-circle" data-w-id="5199ce95-d0e5-33c7-87ba-b9aee07c8554" data-animation-type="lottie" data-src="documents/black_circle_lottie.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0" data-duration="0"></div><img src="images/Group-1410103857.svg" style="opacity:0" width="550" height="538" alt="Circle" data-w-id="eb4b7b78-6225-6286-a134-c951f2f143be" class="hs-circle">
-          <div class="hs-content">
-            <h6 data-w-id="b951ca21-1f68-7dc1-3fdd-063bef9bea10" style="opacity:0" class="heading-3">We can bring your game ideas to</h6>
-            <div data-w-id="eb4b7b78-6225-6286-a134-c951f2f143c7" style="opacity:0" class="hs-text">REALITY</div>
-          </div>
-          <div class="hs-gradient"></div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="home-portfolio">
-          <div class="hp-image-wrapper"><img class="hp-image _1" src="images/dev_ninehermits1.png" width="456" height="334" alt="" style="opacity:0" sizes="(max-width: 479px) 100vw, 456px" data-w-id="d35cbe6b-92ba-bcd5-0db7-e45d33f58474" srcset="images/dev_ninehermits1-p-500.png 500w, images/dev_ninehermits1-p-800.png 800w, images/dev_ninehermits1-p-1080.png 1080w, images/dev_ninehermits1.png 1456w"><img class="hp-image _2" src="images/dev_ninehermits2.png" width="913.2515258789062" height="698" alt="" style="opacity:0" sizes="(max-width: 991px) 100vw, 913.25px" data-w-id="d35cbe6b-92ba-bcd5-0db7-e45d33f58475" srcset="images/dev_ninehermits2-p-500.png 500w, images/dev_ninehermits2-p-800.png 800w, images/dev_ninehermits2-p-1080.png 1080w, images/dev_ninehermits2.png 1456w"></div>
-          <div data-w-id="fc7d8e77-7a0e-fba6-44d9-7bca70ec9285" class="hp-wrapper">
-            <a href="#" class="hp-inner w-inline-block">
-              <h2 class="hp-inner-heading">We</h2>
-              <div class="hp-hover"></div>
-            </a>
-            <a href="#" class="hp-inner w-inline-block">
-              <h2 class="hp-inner-heading">Are</h2>
-              <div class="hp-hover"></div>
-            </a>
-            <a href="#" class="hp-inner w-inline-block">
-              <h2 class="hp-inner-heading">The</h2>
-              <div class="hp-hover"></div>
-            </a>
-            <a href="#" class="hp-inner w-inline-block">
-              <h2 class="hp-inner-heading">Future</h2>
-              <div class="hp-hover"></div>
-            </a><img src="images/ctlr1.png" alt="" sizes="(max-width: 1024px) 100vw, 1024px" srcset="images/ctlr1-p-500.png 500w, images/ctlr1-p-800.png 800w, images/ctlr1.png 1024w" class="hp-image-left"><img src="images/ctlr2.png" alt="" sizes="(max-width: 1024px) 100vw, 1024px" srcset="images/ctlr2-p-500.png 500w, images/ctlr2-p-800.png 800w, images/ctlr2.png 1024w" class="hp-image-right">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="home-venture">
-          <div class="hv-header">
-            <h4 data-w-id="e149c76d-9656-cb1c-4070-f3dd224e26e5" style="opacity:0" class="hv-header-heading">Working with Us</h4>
-            <p data-w-id="9adcacd0-5713-da29-cb40-7f0a5211b50a" style="opacity:0" class="paragraph-30px hu">At Nine Hermits Games, we’re reshaping entertainment with bold ideas and a global mindset. Our team thrives on collaboration, creativity, and constant improvement to build epic games that wow the world. Let’s make magic together!</p>
-          </div>
-          <a id="q1_2025" href="https://forms.gle/3NgiA2yfYnS1A2YLA" target="_blank" class="button wwu w-inline-block">
-            <div class="button-card-big">
-              <div class="text-block-3">Get a Quote</div>
-            </div>
-            <div class="button-card-small"><img src="images/Vectors-Wrapper.svg" loading="lazy" width="25.25323486328125" height="25.25323486328125" alt="" class="button-arrow">
-              <div class="button-hover"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="footer-top">
-          <div class="footer-carousel">
-            <div class="footer-carousel-wrapper"><img src="images/3.png" alt="" sizes="(max-width: 1500px) 100vw, 1500px" srcset="images/3-p-500.png 500w, images/3-p-800.png 800w, images/3-p-1080.png 1080w, images/3.png 1500w" class="footer-image _1"><img src="images/4.png" alt="" sizes="(max-width: 1080px) 100vw, 1080px" srcset="images/4-p-500.png 500w, images/4-p-800.png 800w, images/4.png 1080w" class="footer-image _2"><img src="images/5.png" alt="" sizes="(max-width: 1200px) 100vw, 1200px" srcset="images/5-p-500.png 500w, images/5-p-800.png 800w, images/5-p-1080.png 1080w, images/5.png 1200w" class="footer-image _3"><img src="images/6.png" alt="" sizes="(max-width: 1920px) 100vw, 1920px" srcset="images/6-p-500.png 500w, images/6-p-800.png 800w, images/6-p-1080.png 1080w, images/6-p-1600.png 1600w, images/6.png 1920w" class="footer-image _4"></div>
-            <div class="footer-carousel-wrapper"><img src="images/3.png" alt="" sizes="(max-width: 1500px) 100vw, 1500px" srcset="images/3-p-500.png 500w, images/3-p-800.png 800w, images/3-p-1080.png 1080w, images/3.png 1500w" class="footer-image _1"><img src="images/4.png" alt="" sizes="(max-width: 1080px) 100vw, 1080px" srcset="images/4-p-500.png 500w, images/4-p-800.png 800w, images/4.png 1080w" class="footer-image _2"><img src="images/5.png" alt="" sizes="(max-width: 1200px) 100vw, 1200px" srcset="images/5-p-500.png 500w, images/5-p-800.png 800w, images/5-p-1080.png 1080w, images/5.png 1200w" class="footer-image _3"><img src="images/6.png" alt="" sizes="(max-width: 1920px) 100vw, 1920px" srcset="images/6-p-500.png 500w, images/6-p-800.png 800w, images/6-p-1080.png 1080w, images/6-p-1600.png 1600w, images/6.png 1920w" class="footer-image _4"></div>
-            <div class="footer-carousel-wrapper"><img src="images/3.png" alt="" sizes="(max-width: 1500px) 100vw, 1500px" srcset="images/3-p-500.png 500w, images/3-p-800.png 800w, images/3-p-1080.png 1080w, images/3.png 1500w" class="footer-image _1"><img src="images/4.png" alt="" sizes="(max-width: 1080px) 100vw, 1080px" srcset="images/4-p-500.png 500w, images/4-p-800.png 800w, images/4.png 1080w" class="footer-image _2"><img src="images/5.png" alt="" sizes="(max-width: 1200px) 100vw, 1200px" srcset="images/5-p-500.png 500w, images/5-p-800.png 800w, images/5-p-1080.png 1080w, images/5.png 1200w" class="footer-image _3"><img src="images/6.png" alt="" sizes="(max-width: 1920px) 100vw, 1920px" srcset="images/6-p-500.png 500w, images/6-p-800.png 800w, images/6-p-1080.png 1080w, images/6-p-1600.png 1600w, images/6.png 1920w" class="footer-image _4"></div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-middle">
-        <div class="fm-background-border">
-          <div class="container no-bottom-padding"><img src="images/image.png" srcset="images/image-p-500.png 500w, images/image-p-800.png 800w, images/image-p-1080.png 1080w, images/image-p-1600.png 1600w, images/image-p-2000.png 2000w, images/image.png 2012w" data-w-id="cc5dd37c-21a2-6727-e579-81823041822b" sizes="(max-width: 2012px) 100vw, 2012px" alt="" class="footer-logo"></div>
-        </div>
-        <div class="container c-footer-bottom">
-          <div class="footer-bottom">
-            <div class="footer-social">
-              <a href="https://www.linkedin.com/company/ninehermits-games" class="footer-social-circle w-inline-block"><img src="images/674442b983a74e561a453f8f_Vector.svg" loading="lazy" alt=""></a>
-              <a href="https://www.facebook.com/NineHermitsGames" class="footer-social-circle w-inline-block"><img src="images/674442b983a74e561a453f90_Vector-1.svg" loading="lazy" alt=""></a>
-              <a href="https://www.instagram.com/ninehermitsgames?igsh=amRpcXVrZGFrbjA2" class="footer-social-circle w-inline-block"><img src="images/674442b983a74e561a453f91_Vector-2.svg" loading="lazy" alt=""></a>
-              <a href="https://www.youtube.com/@ninehermitsgames" class="footer-social-circle w-inline-block"><img src="images/674553576398e79b4ca9c4b4_youtube.svg" loading="lazy" width="20" height="Auto" alt=""></a>
-              <a href="https://twitter.com/NineHermits" class="footer-social-circle w-inline-block"><img src="images/67455357fe0c0023cd72ff30_twitter.svg" loading="lazy" width="15" alt=""></a>
-            </div>
-            <a href="utility-pages/terms.html" class="footer-text _2 priv">Privacy Policy</a>
-            <div id="w-node-cc5dd37c-21a2-6727-e579-818230418237-304181ef" class="footer-text _2">© Nine Hermits Games Pvt Ltd </div>
-          </div>
-        </div>
+    <!-- Row 2 — scrolls right -->
+    <div class="logo-row">
+      <div class="logo-slide sr">
+        <div class="lbox"><img class="lbox-logo-img" src="https://www.lolc.com/storage/1/1.svg" alt="LOLC">LOLC</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/vsis.jpg" alt="VSIS">VSIS</div>
+        <div class="lbox"><img class="lbox-logo-img" src="https://hemas.com/assets/images/logo/hemas-logo-white.png" alt="Hemas">HEMAS</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="Assets/MARS.png" alt="MARS">MARS</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="Assets/Saudi%20Royal%20Family.png" alt="Saudi Government">SAUDI GOVERNMENT</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/1280px-Etihad-airways-logo.svg.png" alt="Etihad Airways">ETIHAD AIRWAYS</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/ICTA_LOGO-HR-1024x442.png" alt="ICTA">ICTA</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/crow.jpg" alt="Crow Agency">CROW AGENCY</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/visit_czechia-logo.png" alt="Visit Czechia">VISIT CZECHIA</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m23.8764 18.0313-3.962 4.1393a.9201.9201 0 0 1-.306.2106.9407.9407 0 0 1-.367.0742H.4599a.4689.4689 0 0 1-.2522-.0733.4513.4513 0 0 1-.1696-.1962.4375.4375 0 0 1-.0314-.2545.4438.4438 0 0 1 .117-.2298l3.9649-4.1393a.92.92 0 0 1 .3052-.2102.9407.9407 0 0 1 .3658-.0746H23.54a.4692.4692 0 0 1 .2523.0734.4531.4531 0 0 1 .1697.196.438.438 0 0 1 .0313.2547.4442.4442 0 0 1-.1169.2297zm-3.962-8.3355a.9202.9202 0 0 0-.306-.2106.941.941 0 0 0-.367-.0742H.4599a.4687.4687 0 0 0-.2522.0734.4513.4513 0 0 0-.1696.1961.4376.4376 0 0 0-.0314.2546.444.444 0 0 0 .117.2297l3.9649 4.1394a.9204.9204 0 0 0 .3052.2102c.1154.049.24.0744.3658.0746H23.54a.469.469 0 0 0 .2523-.0734.453.453 0 0 0 .1697-.1961.4382.4382 0 0 0 .0313-.2546.4444.4444 0 0 0-.1169-.2297zM.46 6.7225h18.7815a.9411.9411 0 0 0 .367-.0742.9202.9202 0 0 0 .306-.2106l3.962-4.1394a.4442.4442 0 0 0 .117-.2297.4378.4378 0 0 0-.0314-.2546.453.453 0 0 0-.1697-.196.469.469 0 0 0-.2523-.0734H4.7596a.941.941 0 0 0-.3658.0745.9203.9203 0 0 0-.3052.2102L.1246 5.9687a.4438.4438 0 0 0-.1169.2295.4375.4375 0 0 0 .0312.2544.4512.4512 0 0 0 .1692.196.4689.4689 0 0 0 .2518.0739z"/></svg>SOLANA</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 0a12 12 0 1012 12A12 12 0 0012 0zm0 23.52A11.52 11.52 0 1123.52 12 11.52 11.52 0 0112 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 01-5.804-2.978 2.859 2.859 0 00.65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 00-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 012.528-5.597 7.408 7.408 0 013.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 00.148.256 1.075 1.075 0 00.88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 01.387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"/></svg>UNREAL ENGINE</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"/></svg>UNITY</div>
+        <div class="lbox"><img class="lbox-logo-img" src="https://app.opengameprotocol.com/favicon.ico" alt="Open Game Protocol">OPEN GAME PROTOCOL</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z"/></svg>SONY PLAYSTATION</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/></svg>NVIDIA INCEPTION</div>
+        <!-- duplicate -->
+        <div class="lbox"><img class="lbox-logo-img" src="https://www.lolc.com/storage/1/1.svg" alt="LOLC">LOLC</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/vsis.jpg" alt="VSIS">VSIS</div>
+        <div class="lbox"><img class="lbox-logo-img" src="https://hemas.com/assets/images/logo/hemas-logo-white.png" alt="Hemas">HEMAS</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="Assets/MARS.png" alt="MARS">MARS</div>
+        <div class="lbox"><img class="lbox-logo-img invert" src="Assets/Saudi%20Royal%20Family.png" alt="Saudi Government">SAUDI GOVERNMENT</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/1280px-Etihad-airways-logo.svg.png" alt="Etihad Airways">ETIHAD AIRWAYS</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/ICTA_LOGO-HR-1024x442.png" alt="ICTA">ICTA</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/crow.jpg" alt="Crow Agency">CROW AGENCY</div>
+        <div class="lbox"><img class="lbox-logo-img" src="Assets/visit_czechia-logo.png" alt="Visit Czechia">VISIT CZECHIA</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m23.8764 18.0313-3.962 4.1393a.9201.9201 0 0 1-.306.2106.9407.9407 0 0 1-.367.0742H.4599a.4689.4689 0 0 1-.2522-.0733.4513.4513 0 0 1-.1696-.1962.4375.4375 0 0 1-.0314-.2545.4438.4438 0 0 1 .117-.2298l3.9649-4.1393a.92.92 0 0 1 .3052-.2102.9407.9407 0 0 1 .3658-.0746H23.54a.4692.4692 0 0 1 .2523.0734.4531.4531 0 0 1 .1697.196.438.438 0 0 1 .0313.2547.4442.4442 0 0 1-.1169.2297zm-3.962-8.3355a.9202.9202 0 0 0-.306-.2106.941.941 0 0 0-.367-.0742H.4599a.4687.4687 0 0 0-.2522.0734.4513.4513 0 0 0-.1696.1961.4376.4376 0 0 0-.0314.2546.444.444 0 0 0 .117.2297l3.9649 4.1394a.9204.9204 0 0 0 .3052.2102c.1154.049.24.0744.3658.0746H23.54a.469.469 0 0 0 .2523-.0734.453.453 0 0 0 .1697-.1961.4382.4382 0 0 0 .0313-.2546.4444.4444 0 0 0-.1169-.2297zM.46 6.7225h18.7815a.9411.9411 0 0 0 .367-.0742.9202.9202 0 0 0 .306-.2106l3.962-4.1394a.4442.4442 0 0 0 .117-.2297.4378.4378 0 0 0-.0314-.2546.453.453 0 0 0-.1697-.196.469.469 0 0 0-.2523-.0734H4.7596a.941.941 0 0 0-.3658.0745.9203.9203 0 0 0-.3052.2102L.1246 5.9687a.4438.4438 0 0 0-.1169.2295.4375.4375 0 0 0 .0312.2544.4512.4512 0 0 0 .1692.196.4689.4689 0 0 0 .2518.0739z"/></svg>SOLANA</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 0a12 12 0 1012 12A12 12 0 0012 0zm0 23.52A11.52 11.52 0 1123.52 12 11.52 11.52 0 0112 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 01-5.804-2.978 2.859 2.859 0 00.65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 00-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 012.528-5.597 7.408 7.408 0 013.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 00.148.256 1.075 1.075 0 00.88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 01.387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"/></svg>UNREAL ENGINE</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"/></svg>UNITY</div>
+        <div class="lbox"><img class="lbox-logo-img" src="https://app.opengameprotocol.com/favicon.ico" alt="Open Game Protocol">OPEN GAME PROTOCOL</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z"/></svg>SONY PLAYSTATION</div>
+        <div class="lbox"><svg class="lbox-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/></svg>NVIDIA INCEPTION</div>
       </div>
     </div>
   </div>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=674442b983a74e561a453eca" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="js/webflow.js" type="text/javascript"></script><!--  Google tag (gtag.js)  -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MXTDRQ1GNJ"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MXTDRQ1GNJ');
+  <div class="partner-note fu">// TRUSTED CLIENTS · OFFICIAL TECHNOLOGY PARTNERS · <em>認定パートナー</em> · CERTIFIED ALLIANCES</div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="seh fu">
+    <div><div class="seb">// プロセス</div><h2 class="bt">THE <span class="acc">PROCESS</span></h2></div>
+  </div>
+  <div class="psteps">
+    <div class="pstep pxc fu"><div class="pxcb"><div class="pw">LEVEL 1-4</div><div class="ptitle">DECODE</div><div class="pdesc">We research your audience, map their motivations, and define what makes them act. Strategy before a single pixel is drawn.</div><div class="pjp">解読 | BEHAVIORAL BRIEF</div><div class="pscr">01</div></div></div>
+    <div class="pstep pxc fu"><div class="pxcb"><div class="pw">LEVEL 2-4</div><div class="ptitle">DESIGN</div><div class="pdesc">Mechanics, narrative, and behavioral loops engineered together. The game design document is your product blueprint.</div><div class="pjp">設計 | SYSTEMS & STORY</div><div class="pscr">02</div></div></div>
+    <div class="pstep pxc fu"><div class="pxcb"><div class="pw">LEVEL 3-4</div><div class="ptitle">BUILD</div><div class="pdesc">Weekly builds. Zero surprises. You play it before it ships — every milestone, every time.</div><div class="pjp">構築 | RAPID PRODUCTION</div><div class="pscr">03</div></div></div>
+    <div class="pstep pxc fu"><div class="pxcb"><div class="pw">LEVEL 4-4</div><div class="ptitle">LAUNCH</div><div class="pdesc">Platform submission, go-live support, and post-launch performance tracking. We don't disappear at release.</div><div class="pjp">リリース | LIVE & BEYOND</div><div class="pscr">04</div></div></div>
+  </div>
+</section>
+
+<!-- HIRE -->
+<section id="hire">
+  <div class="tron"></div><div class="hglow"></div>
+  <div class="hin">
+    <div class="fstage">◈ FINAL STAGE // 最終ステージ ◈</div>
+    <div class="hjp">仕事をください — GIVE US THE JOB</div>
+    <h2 class="htl fu">READY TO<br><em>BUILD TOGETHER?</em></h2>
+    <p class="hdescr fu">Have a game idea? Need a full team? Want to ship something legendary? Select your mission — let's make it real.</p>
+    <div class="pslabel">// SELECT PROJECT TYPE</div>
+    <div class="psel fu">
+      <div class="po on" onclick="selP(this)">[ INDIE GAME ]</div>
+      <div class="po" onclick="selP(this)">[ AAA TITLE ]</div>
+      <div class="po" onclick="selP(this)">[ MOBILE APP ]</div>
+      <div class="po" onclick="selP(this)">[ CONSULTING ]</div>
+      <div class="po" onclick="selP(this)">[ PORT / PUBLISH ]</div>
+      <div class="po" onclick="selP(this)">[ OTHERS ]</div>
+    </div>
+    <form class="hform fu" id="contact-form">
+      <div class="hf-row">
+        <div class="hf-field"><label>NAME <em>*</em></label><input type="text" name="name" required></div>
+        <div class="hf-field"><label>COMPANY NAME</label><input type="text" name="company"></div>
+      </div>
+      <div class="hf-row">
+        <div class="hf-field"><label>EMAIL <em>*</em></label><input type="email" name="email" required></div>
+        <div class="hf-field"><label>MOBILE (OPTIONAL)</label><input type="tel" name="mobile"></div>
+      </div>
+      <div class="hf-field"><label>PROJECT DESCRIPTION</label><textarea name="description" rows="4"></textarea></div>
+    </form>
+    <div class="hacts fu">
+      <button type="submit" form="contact-form" class="bp">▶ SEND US A MESSAGE</button>
+      <a href="#about" class="bs">LEARN MORE</a>
+    </div>
+    <div class="hnote fu">WE RESPOND WITHIN 24 HOURS // 24時間以内に返信します</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-pxbar"></div>
+  <div class="ft-brand">
+    <div class="ft-tag">ナイン・ハーミッツ · 九人の隠者 · GAME STUDIO</div>
+  </div>
+  <div class="ft-giant">
+    <div class="ft-giant-text">DESIGNED</div>
+    <div class="ft-giant-text go">TO ENGAGE.</div>
+  </div>
+  <div class="ft-stats">
+    <div class="ft-stat"><div class="fst-n">300+</div><div class="fst-l">GAMES DEVELOPED</div></div>
+    <div class="ft-stat"><div class="fst-n">440,000+</div><div class="fst-l">PLAYERS</div></div>
+    <div class="ft-stat"><div class="fst-n">100%</div><div class="fst-l">CLIENT RETENTION</div></div>
+    <div class="ft-stat"><div class="fst-n">11+</div><div class="fst-l">YEARS ACTIVE</div></div>
+  </div>
+  <div class="ft-mid">
+    <div class="ft-manifesto">
+      <div class="ftm-title">DESIGNED TO <em>ENGAGE.</em><br>BUILT TO OUTLAST.</div>
+      <div class="ftm-body">We don't just build games — we engineer behavior. Nine Hermits sits at the intersection of interactive design, strategic research, and creative technology. Every project we touch is built to move people, grow brands, and create worlds worth returning to.</div>
+    </div>
+    <div class="ft-social">
+      <div class="ft-soc-label">// FIND US ONLINE</div>
+      <div class="ft-soc-row">
+        <a href="https://www.youtube.com/@ninehermitsgames" target="_blank" rel="noopener" class="psoc" aria-label="YouTube"><svg width="28" height="28" viewBox="0 0 16 16" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="10" height="1" fill="#FF5200"/><rect x="2" y="4" width="12" height="1" fill="#FF5200"/><rect x="1" y="5" width="14" height="6" fill="#FF5200"/><rect x="2" y="11" width="12" height="1" fill="#FF5200"/><rect x="3" y="12" width="10" height="1" fill="#FF5200"/><rect x="7" y="5" width="1" height="1" fill="#09090D"/><rect x="7" y="6" width="2" height="1" fill="#09090D"/><rect x="7" y="7" width="3" height="2" fill="#09090D"/><rect x="7" y="9" width="2" height="1" fill="#09090D"/><rect x="7" y="10" width="1" height="1" fill="#09090D"/></svg></a>
+        <a href="https://x.com/NineHermits" target="_blank" rel="noopener" class="psoc" aria-label="X"><svg width="28" height="28" viewBox="0 0 8 8" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="2" height="2" fill="#FF5200"/><rect x="6" y="0" width="2" height="2" fill="#FF5200"/><rect x="1" y="1" width="2" height="2" fill="#FF5200"/><rect x="5" y="1" width="2" height="2" fill="#FF5200"/><rect x="2" y="2" width="2" height="2" fill="#FF5200"/><rect x="4" y="2" width="2" height="2" fill="#FF5200"/><rect x="3" y="3" width="2" height="2" fill="#FF5200"/><rect x="2" y="4" width="2" height="2" fill="#FF5200"/><rect x="4" y="4" width="2" height="2" fill="#FF5200"/><rect x="1" y="5" width="2" height="2" fill="#FF5200"/><rect x="5" y="5" width="2" height="2" fill="#FF5200"/><rect x="0" y="6" width="2" height="2" fill="#FF5200"/><rect x="6" y="6" width="2" height="2" fill="#FF5200"/></svg></a>
+        <a href="https://www.instagram.com/ninehermitsgames/" target="_blank" rel="noopener" class="psoc" aria-label="Instagram"><svg width="28" height="28" viewBox="0 0 16 16" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="14" height="2" fill="#FF5200"/><rect x="1" y="13" width="14" height="2" fill="#FF5200"/><rect x="1" y="1" width="2" height="14" fill="#FF5200"/><rect x="13" y="1" width="2" height="14" fill="#FF5200"/><rect x="5" y="5" width="6" height="6" fill="#FF5200"/><rect x="6" y="6" width="4" height="4" fill="#09090D"/><rect x="10" y="3" width="2" height="2" fill="#FF5200"/></svg></a>
+        <a href="https://www.tiktok.com/@ninehermitsgames" target="_blank" rel="noopener" class="psoc" aria-label="TikTok"><svg width="28" height="28" viewBox="0 0 16 16" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><rect x="9" y="3" width="2" height="7" fill="#FF5200"/><rect x="4" y="9" width="7" height="4" fill="#FF5200"/><rect x="11" y="3" width="3" height="3" fill="#FF5200"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-nav">
+    <a href="#games">GAMES</a><a href="#service">SERVICES</a>
+    <a href="#about">STUDIO</a><a href="#process">PROCESS</a>
+    <a href="#hire">CAREERS</a><a href="mailto:hello@ninehermitsgames.com">CONTACT →</a>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2024 <em>NINE HERMITS GAMES</em>. ALL RIGHTS RESERVED.</div>
+    <div class="ft-jp">ナイン・ハーミッツ・ゲームズ · 九人の隠者</div>
+  </div>
+</footer>
+
+<script>
+/* ── CURSOR ── */
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function lp(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lp)})();
+
+/* ── BOOT ── */
+window.addEventListener('load',()=>{
+  setTimeout(()=>{const b=document.getElementById('boot');b.style.transition='opacity .5s';b.style.opacity='0';setTimeout(()=>b.style.display='none',520)},2600);
+});
+
+/* ── GLOBAL GLITCH ── */
+const gover=document.getElementById('gover');
+function fireGlitch(){
+  gover.className='';void gover.offsetWidth;
+  gover.className=Math.random()>.5?'g1':'g2';
+  setTimeout(()=>gover.className='',300);
+}
+setInterval(()=>{if(Math.random()>.65)fireGlitch()},5000+Math.random()*8000);
+
+/* ── NAV ── */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+
+/* ── NAV ACTIVE ── */
+const navMap={games:document.querySelector('[href="#games"]'),service:document.querySelector('[href="#service"]'),about:document.querySelector('[href="#about"]'),process:document.querySelector('[href="#process"]')};
+const secIO=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      Object.values(navMap).forEach(a=>a&&a.classList.remove('active'));
+      if(navMap[e.target.id])navMap[e.target.id].classList.add('active');
+    }
+  });
+},{rootMargin:'-48% 0px -48% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>secIO.observe(s));
+
+/* ── SCROLL REVEAL ── */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.hpf').forEach(f=>{
+        const w=f.style.getPropertyValue('--w')||'1';
+        setTimeout(()=>f.style.transform=`scaleX(${w})`,100);
+      });
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.fu,.crt-card,.pstep').forEach(el=>io.observe(el));
+
+/* ── TEXT SCRAMBLE ── */
+const SCHARS='!<>-_\\/[]{}=+*^?#アイウカキクケコ九一二三四ABCDEFGHIJKLMN0123456789';
+function scramble(el,finalHTML,duration=700){
+  const plain=el.textContent;
+  let i=0,frame;
+  function tick(){
+    let out='';
+    for(let c=0;c<plain.length;c++){
+      if(c<i) out+=finalHTML[c]||plain[c];
+      else out+=SCHARS[Math.floor(Math.random()*SCHARS.length)];
+    }
+    el.textContent=out;
+    if(i<plain.length){i+=.5;requestAnimationFrame(tick)}
+    else el.innerHTML=finalHTML;
+  }
+  tick();
+}
+/* scramble section titles on enter */
+const scIO=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const bt=e.target.querySelector('.bt');
+      if(bt&&!bt.dataset.scrambled){
+        bt.dataset.scrambled='1';
+        const orig=bt.innerHTML;setTimeout(()=>scramble(bt,orig,600),200);
+      }
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('section').forEach(s=>scIO.observe(s));
+
+/* ── COUNT UP ── */
+function countUp(el){
+  const t=parseInt(el.dataset.count)||0;
+  let c=0;const step=Math.ceil(t/36);
+  const tm=setInterval(()=>{
+    c=Math.min(c+step,t);
+    el.textContent=t===100?c+'%':c.toLocaleString()+'+';
+    if(c>=t)clearInterval(tm);
+  },36);
+}
+const cio=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target)}});
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ── ACHIEVEMENT ── */
+const achEl=document.getElementById('ach'),achName=document.getElementById('ach-name');
+const achievements=[
+  {sec:'service',name:'SKILL TREE UNLOCKED'},
+  {sec:'about',name:'PLAYER STATS LOADED'},
+  {sec:'clients',name:'NETWORK REVEALED'},
+  {sec:'process',name:'WORLD MAP REVEALED'},
+  {sec:'hire',name:'FINAL STAGE REACHED'},
+];
+achievements.forEach(({sec,name})=>{
+  const el=document.getElementById(sec);
+  if(!el)return;
+  let shown=false;
+  new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting&&!shown){
+      shown=true;
+      achName.textContent=name;
+      achEl.classList.add('show');
+      setTimeout(()=>achEl.classList.remove('show'),3200);
+    }
+  },{threshold:.4}).observe(el);
+});
+
+/* ── GAME DETAIL MODAL ── */
+const gameModal=document.getElementById('game-modal');
+const gmGenre=gameModal.querySelector('.gm-genre'),gmName=gameModal.querySelector('.gm-name'),gmBody=gameModal.querySelector('.gm-body');
+function openGameModal(card){
+  gmGenre.textContent=card.querySelector('.ggenre').textContent;
+  gmName.textContent=card.querySelector('.gname').textContent;
+  gmBody.textContent=card.dataset.popup;
+  gameModal.classList.add('show');
+}
+function closeGameModal(){gameModal.classList.remove('show')}
+document.querySelectorAll('.gc[data-popup]').forEach(card=>card.addEventListener('click',()=>openGameModal(card)));
+gameModal.querySelector('.gm-close').addEventListener('click',closeGameModal);
+gameModal.addEventListener('click',e=>{if(e.target===gameModal)closeGameModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGameModal()});
+
+/* ── PROJECT SELECT ── */
+function selP(el){document.querySelectorAll('.po').forEach(o=>o.classList.remove('on'));el.classList.add('on')}
+
+/* ── CONTACT FORM ── */
+document.getElementById('contact-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  const f=e.target;
+  const name=f.name.value.trim();
+  const company=f.company.value.trim();
+  const email=f.email.value.trim();
+  const mobile=f.mobile.value.trim();
+  const desc=f.description.value.trim();
+  const projectType=document.querySelector('.po.on')?.textContent.replace(/[\[\]]/g,'').trim()||'N/A';
+  const subject=`New Project Inquiry from ${name}`;
+  const body=`Name: ${name}\nCompany: ${company||'N/A'}\nEmail: ${email}\nMobile: ${mobile||'N/A'}\nProject Type: ${projectType}\n\nProject Description:\n${desc}`;
+  const mailto=`mailto:randika@ninehermits.com?cc=hello@ninehermitsgames.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href=mailto;
+});
+
+/* ── HAMBURGER ── */
+const ham=document.getElementById('nav-ham'),mobMenu=document.getElementById('mob-menu');
+ham.addEventListener('click',()=>{ham.classList.toggle('open');mobMenu.classList.toggle('open')});
+mobMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');mobMenu.classList.remove('open')}));
+
+/* ── SCROLL PROGRESS ── */
+const sprog=document.getElementById('sprog');
+window.addEventListener('scroll',()=>{
+  const pct=scrollY/(document.body.scrollHeight-innerHeight)*100;
+  sprog.style.width=Math.min(pct,100)+'%';
+},{passive:true});
+
+/* ── BUTTON RIPPLE ── */
+document.querySelectorAll('.bp,.bs,.nav-cta,.po,.psoc').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    const r=document.createElement('span');r.className='rpl';
+    const rect=btn.getBoundingClientRect();
+    const sz=Math.max(rect.width,rect.height)*2;
+    r.style.cssText=`width:${sz}px;height:${sz}px;left:${e.clientX-rect.left-sz/2}px;top:${e.clientY-rect.top-sz/2}px`;
+    btn.appendChild(r);setTimeout(()=>r.remove(),650);
+  });
+});
+
+/* ── SMOOTH ANCHOR SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+  });
+});
+
+/* ── MATRIX RAIN (subtle bg) ── */
+const mc=document.createElement('canvas');
+mc.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.016';
+document.body.prepend(mc);
+const mx2=mc.getContext('2d');
+let mW,mH,mD;
+const MC='アイウエオカキクケコサシスセソタチツテトハヒフヘホラリルレロ九一二三ABCDEFGHIJKLMN0123456789';
+function mInit(){mW=mc.width=innerWidth;mH=mc.height=innerHeight;mD=Array(Math.floor(mW/16)).fill(1)}
+mInit();window.addEventListener('resize',mInit,{passive:true});
+function mRain(){
+  mx2.fillStyle='rgba(9,9,13,.05)';mx2.fillRect(0,0,mW,mH);
+  mx2.fillStyle='#FF5200';mx2.font='13px "Share Tech Mono",monospace';
+  mD.forEach((y,i)=>{mx2.fillText(MC[Math.floor(Math.random()*MC.length)],i*16,y*16);if(y*16>mH&&Math.random()>.975)mD[i]=0;mD[i]++});
+}
+setInterval(mRain,55);
 </script>
 </body>
 </html>
